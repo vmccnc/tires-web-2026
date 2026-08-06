@@ -1,0 +1,35 @@
+.galleryDesktop {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 102fr)
+    minmax(0, 450fr);
+  gap: 16px;
+  width: 100%;
+
+  &.outOfStock {
+    img {
+      opacity: 0.4;
+    }
+  }
+
+  .smallImages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    min-height: 0;
+    object-fit: contain;
+  }
+}
+
+.imageWrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  background-color: var(--color-background-primary-muted);
+}

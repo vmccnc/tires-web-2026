@@ -1,0 +1,17 @@
+.guaranteeBanner {
+  background-image: url('/src/assets/images/guaranteeBanner.jpg');
+  background-color: var(--color-background-secondary);
+  color: var(--color-text-secondary);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-overlay-dark);
+  }
+}
+
+.guaranteeBannerContent {
+  position: relative;
+  z-index: 1;
+}

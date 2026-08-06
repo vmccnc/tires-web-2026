@@ -1,0 +1,36 @@
+import s from './WheelSpacers.module.scss';
+import { ProductPageLayout } from '@/layouts/ProductPageLayout';
+import { ProductGrid } from '@/widgets/ProductGrid';
+import { useGetWheelSpacersQuery } from '@/entities/wheelSpacer/api';
+import { WheelSpacerCard } from '@/entities/wheelSpacer/ui/WheelSpacerCard';
+import { usePaginationParams } from '@/features/pagination/model/usePaginationParams';
+import type { WheelSpacerParams } from '@/entities/wheelSpacer/model';
+export const WheelSpacers = () => {
+  const params = usePaginationParams<WheelSpacerParams>();
+  const { data, isLoading, isError } = useGetWheelSpacersQuery(params);
+  const wheelSpacers = data?.content;
+
+  return (
+    <ProductPageLayout
+      title="pages.wheelSpacers.title"
+      filterType="wheelSpacers"
+      className={s.wheelSpacersPage}
+      totalPages={data?.totalPages ?? 1}
+      currentPage={data?.pageNumber ?? 1}
+      category={{
+        label: 'pages.wheelSpacers.title',
+      }}
+      isEmpty={!wheelSpacers?.length}
+      isError={isError}
+      isLoading={isLoading}
+    >
+      <ProductGrid
+        items={wheelSpacers ?? []}
+        getKey={(wheelSpacer) => wheelSpacer.id}
+        renderItem={(wheelSpacer) => (
+          <WheelSpacerCard wheelSpacer={wheelSpacer} />
+        )}
+      />
+    </ProductPageLayout>
+  );
+};

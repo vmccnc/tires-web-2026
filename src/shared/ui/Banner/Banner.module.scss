@@ -1,0 +1,54 @@
+.banner {
+  --banner-height: clamp(500px, 65vh, 727px);
+  min-height: var(--banner-height);
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .bannerWrapper {
+    min-height: var(--banner-height);
+    display: flex;
+    position: relative;
+  }
+
+  .bannerContent {
+    width: 750px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+  }
+
+  .bannerTitle {
+    font-family: var(--font-onder);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 40px;
+    color: inherit;
+  }
+
+  .bannerDescription {
+    font-size: 20px;
+    line-height: 26px;
+    color: var(--color-text-secondary-muted);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+
+  .bannerLinks {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .bannerBreadcrumbs {
+    position: absolute;
+    top: 20px;
+  }
+
+  .bannerImage {
+    position: absolute;
+  }
+}

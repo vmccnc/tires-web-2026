@@ -1,0 +1,18 @@
+.supportBanner {
+  background-image: url('/src/assets/images/supportBanner.png');
+  background-color: var(--color-background-secondary);
+  color: var(--color-text-secondary);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-overlay-dark);
+  }
+}
+
+.supportContent {
+  position: relative;
+  z-index: 1;
+  padding-top: 128px;
+}

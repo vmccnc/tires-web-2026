@@ -1,0 +1,11 @@
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,46 @@
+.homeFilter {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+
+  .submitBtn {
+    width: 100%;
+  }
+  .homeFilterFormSelect {
+    padding: 6px 36px 6px 8px;
+    font-size: 16px;
+    line-height: 20px;
+    border: 1px solid #111;
+  }
+
+  .homeFilterFormSelectIcon {
+    right: 16px;
+    width: 7px;
+    height: 4px;
+    color: #111;
+  }
+}
+.homeFilterForm {
+  background-color: var(--color-background-primary);
+  padding: 40px 20px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.selectTrigger {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 6px 8px;
+}
+
+.homeFilterContent {
+  padding: 40px 20px;
+}
