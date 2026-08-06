@@ -1,8 +1,8 @@
-export { default as dakar } from './dakar.png';
-export { default as mountain } from './mountain.png';
-export { default as ranger } from './ranger.png';
-export { default as sahara } from './sahara.png';
-export { default as specialTrack } from './specialTrack.png';
-export { default as tractionTrack } from './tractionTrack.png';
-export { default as winterGrip } from './winterGrip.png';
-export { default as ecoDrive } from './ecoDrive.png';
+export { default as dakar } from './Dakar.png';
+export { default as mountain } from './Mountain.png';
+export { default as ranger } from './Ranger.png';
+export { default as sahara } from './Sahara.png';
+export { default as specialTrack } from './SpecialTrack.png';
+export { default as tractionTrack } from './TractionTrack.png';
+export { default as winterGrip } from './WinterGrip.png';
+export { default as ecoDrive } from './EcoDrive.png';
