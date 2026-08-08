@@ -17,9 +17,10 @@
     gap: 4px;
   }
   .ratingTotal {
-    font-family: var(--font-onder);
+    font-family: var(--font-unbounded);
     font-weight: 500;
     font-size: 16px;
+    text-transform: uppercase;
   }
 
   .ratingCount {

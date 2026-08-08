@@ -8,7 +8,7 @@ export const FAQ = () => {
   const items = useFaqAccordionItems();
   const { t } = useTranslation();
   return (
-    <Section className={s.homeFaq} title={t('home.faq.title')} hasWrapper>
+    <Section className={s.homeFaq} title={t('pages.home.faq.title')} hasWrapper>
       <Accordion
         className={s.faqAccordion}
         itemClassName={s.faqAccordionItem}

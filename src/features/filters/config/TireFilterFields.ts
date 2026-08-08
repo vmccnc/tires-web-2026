@@ -1,6 +1,6 @@
-import type { FilterField } from '@/features/filters/model';
+import type { FilterFieldInitial } from '@/features/filters/model';
 
-export const TireFilterFields: FilterField[] = [
+export const TireFilterFields: FilterFieldInitial[] = [
   {
     name: 'width',
     placeholder: 'filter.tires.width',

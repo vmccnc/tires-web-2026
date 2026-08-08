@@ -1,6 +1,6 @@
-import type { FilterField } from '@/features/filters/model';
+import type { FilterFieldInitial } from '@/features/filters/model';
 
-export const WheelFilterFields: FilterField[] = [
+export const WheelFilterFields: FilterFieldInitial[] = [
   {
     name: 'width',
     placeholder: 'filter.wheels.width',

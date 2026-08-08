@@ -18,7 +18,19 @@ export type HomeFilterProps = {
 
 export const HomeFilter = ({ className }: HomeFilterProps) => {
   const [type, setType] = useState<'tires' | 'wheels'>('tires');
+
+  //статик полей вызываем тут
   const { fields, route } = FILTER_VALUES[type];
+
+  console.log('testFields', fields);
+
+  // потом fields передаем в хук
+  ///здесь хук
+
+  //test hook
+
+  ///
+
   type HomeFilterFormValues = Record<string, string>;
   const { register, reset, watch, handleSubmit } =
     useForm<HomeFilterFormValues>();
@@ -52,7 +64,7 @@ export const HomeFilter = ({ className }: HomeFilterProps) => {
           {fields.map((field) => (
             <Select
               key={field.name}
-              options={field.options}
+              options={field.options!}
               placeholder={t(field.placeholder)}
               className={s.homeFilterFormSelect}
               iconClassName={s.homeFilterFormSelectIcon}

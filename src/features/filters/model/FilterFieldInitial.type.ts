@@ -1,9 +1,8 @@
-export type FilterField = {
+export type FilterFieldInitial = {
   name: string;
   placeholder: string;
-  options: {
+  options?: {
     value: string;
     label: string;
   }[];
-  //  disabled: boolean;
 };

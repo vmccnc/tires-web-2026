@@ -123,7 +123,7 @@ export const ProductFilter = ({
           {fields.map((field) => (
             <Select
               key={field.name}
-              options={field.options}
+              options={field.options!}
               placeholder={t(field.placeholder)}
               wrapperClassName={s.productFilterSelectWrapper}
               className={s.productFilterSelect}

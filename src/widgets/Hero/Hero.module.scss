@@ -9,12 +9,13 @@
 }
 
 .heroTitle {
-  font-family: var(--font-onder);
+  font-family: var(--font-unbounded);
   font-weight: 500;
   font-size: 24px;
   line-height: 40px;
   color: var(--color-text-secondary);
   margin-bottom: 64px;
+  text-transform: uppercase;
 }
 
 .heroContent {

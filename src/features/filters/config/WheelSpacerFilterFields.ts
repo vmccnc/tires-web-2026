@@ -1,6 +1,6 @@
-import type { FilterField } from '@/features/filters/model';
+import type { FilterFieldInitial } from '@/features/filters/model';
 
-export const WheelSpacerFilterFields: FilterField[] = [
+export const WheelSpacerFilterFields: FilterFieldInitial[] = [
   {
     name: 'boltDistance',
     placeholder: 'PCD',
