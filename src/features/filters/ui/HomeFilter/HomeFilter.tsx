@@ -11,6 +11,8 @@ import { Select } from '@/shared/ui/Select';
 import { useNavigate } from 'react-router-dom';
 import { createSearchParams } from '@/shared/lib/helpers';
 import { useTranslation } from '@/shared/lib/hooks';
+import type { FilterSelectValues } from '@/features/filters/model';
+import { useFilterFields } from '@/features/filters/hooks';
 
 export type HomeFilterProps = {
   className?: string;
@@ -18,16 +20,27 @@ export type HomeFilterProps = {
 
 export const HomeFilter = ({ className }: HomeFilterProps) => {
   const [type, setType] = useState<'tires' | 'wheels'>('tires');
-  const { fields, route } = FILTER_VALUES[type];
-  type HomeFilterFormValues = Record<string, string>;
+
+  //статик полей вызываем тут
+  const { route } = FILTER_VALUES[type];
+
   const { register, reset, watch, handleSubmit } =
-    useForm<HomeFilterFormValues>();
+    useForm<FilterSelectValues>();
+
+  //значения которы имеются сейчас в селектах
   const values = watch();
+
+  // потом fields передаем в хук
+  ///здесь хук
+
+  //новые значения полей
+  const fields = useFilterFields(type, values);
+
   const isDisabled = !fields.some((field) => values[field.name]);
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const onSubmit = (data: HomeFilterFormValues) => {
+  const onSubmit = (data: FilterSelectValues) => {
     const params = createSearchParams(data);
     const searchParams = new URLSearchParams(params);
 
@@ -53,6 +66,7 @@ export const HomeFilter = ({ className }: HomeFilterProps) => {
             <Select
               key={field.name}
               options={field.options}
+              disabled={field.disabled}
               placeholder={t(field.placeholder)}
               className={s.homeFilterFormSelect}
               iconClassName={s.homeFilterFormSelectIcon}
