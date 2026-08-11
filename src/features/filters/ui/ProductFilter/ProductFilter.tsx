@@ -21,6 +21,7 @@ import { useGetManufacturersQuery } from '@/entities/manufacturer/api';
 import { ExpandableFilter } from '@/features/filters/ui/ExpandableFilter';
 import { protectors } from '@/shared/config';
 import { useTranslation } from '@/shared/lib/hooks';
+import { useFilterFields } from '@/features/filters/hooks';
 
 const INITIAL_VISIBLE_MANUFACTURERS = 4;
 const INITIAL_VISIBLE_PROTECTORS = 4;
@@ -36,12 +37,13 @@ export const ProductFilter = ({
   filterType,
   page,
 }: ProductFilterProps) => {
-  const fields = FILTER_VALUES[filterType].fields;
+  const initialFields = FILTER_VALUES[filterType].fields;
+
   const [searchParams, setSearchParams] = useSearchParams();
   const { t } = useTranslation();
 
   const defaultValues = {
-    ...getFormValuesFromSearchParams(fields, searchParams),
+    ...getFormValuesFromSearchParams(initialFields, searchParams),
     priceFrom: searchParams.get('priceFrom') ?? '',
     priceTo: searchParams.get('priceTo') ?? '',
     inStock: false,
@@ -54,6 +56,12 @@ export const ProductFilter = ({
       defaultValues,
     },
   );
+
+  //получаем существующие поля
+  const values = watch();
+  console.log(values, 'values');
+  //получаем от бэка данные для селектов
+  const fields = useFilterFields(filterType, values);
 
   const { data, isLoading, isError } = useGetManufacturersQuery();
   const manufacturers = data ?? [];
@@ -98,7 +106,7 @@ export const ProductFilter = ({
 
   const handleReset = () => {
     reset({
-      ...getFormValuesFromSearchParams(fields, new URLSearchParams()),
+      ...getFormValuesFromSearchParams(initialFields, new URLSearchParams()),
       priceFrom: '',
       priceTo: '',
       inStock: false,
@@ -125,6 +133,7 @@ export const ProductFilter = ({
               key={field.name}
               options={field.options!}
               placeholder={t(field.placeholder)}
+              disabled={field.disabled}
               wrapperClassName={s.productFilterSelectWrapper}
               className={s.productFilterSelect}
               iconClassName={s.productFilterSelectIcon}
