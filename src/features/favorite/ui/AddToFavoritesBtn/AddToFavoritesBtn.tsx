@@ -10,9 +10,7 @@ type LikeBtnProps = {
 };
 
 export const AddToFavoritesBtn = ({ className }: LikeBtnProps) => {
-  const handeAddToFavorites = () => {
-    console.log('added to favorites');
-  };
+  const handeAddToFavorites = () => {};
   return (
     <Button
       variant="unset"

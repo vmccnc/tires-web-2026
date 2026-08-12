@@ -11,7 +11,6 @@ export const SearchCard = ({ searchProduct }: Props) => {
 
   const getTireProtectorName = (title: string) =>
     title.match(/\(([^)]+)\)/)?.[1] ?? '';
-  console.log('productType', searchProduct.productType);
   return (
     <ProductCard
       product={searchProduct}

@@ -16,10 +16,10 @@ export const headerRoutes = {
       labelKey: 'header.topMenu.guarantee',
       path: ROUTES.guarantee,
     },
-    {
-      labelKey: 'header.topMenu.news',
-      path: ROUTES.news,
-    },
+    // {
+    //   labelKey: 'header.topMenu.news',
+    //   path: ROUTES.news,
+    // },
     {
       labelKey: 'header.topMenu.feedback',
       path: ROUTES.feedback,

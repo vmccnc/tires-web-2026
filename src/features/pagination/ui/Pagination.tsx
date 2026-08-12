@@ -25,8 +25,6 @@ export const Pagination = ({
       return;
     }
 
-    console.log(pageNumber, 'pageNumber');
-
     const params = new URLSearchParams(searchParams);
     params.set('page', String(pageNumber));
     setSearchParams(params);

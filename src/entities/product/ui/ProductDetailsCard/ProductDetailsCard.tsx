@@ -27,7 +27,6 @@ export const ProductDetailsCard = ({
   characteristics,
   description,
 }: ProductDetailsCardProps) => {
-  console.log(characteristics);
   const inStock = product.quantityInStock > 0;
 
   const { t } = useTranslation();

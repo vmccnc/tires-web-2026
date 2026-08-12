@@ -21,8 +21,6 @@ export const Sort = ({ sortOptions, className }: SortProps) => {
     findInitialSortValue(sortOptions, sortField, sortDirection)?.value ??
     findSortOption(sortOptions, 'default')?.value;
 
-  console.log('sortValue', sortValue);
-
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     //1. Выбираем уникальный параметр конфига
     const selectedValue = e.target.value;
