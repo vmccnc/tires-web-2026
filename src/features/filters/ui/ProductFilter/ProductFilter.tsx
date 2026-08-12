@@ -59,7 +59,6 @@ export const ProductFilter = ({
 
   //получаем существующие поля
   const values = watch();
-  console.log(values, 'values');
   //получаем от бэка данные для селектов
   const fields = useFilterFields(filterType, values);
 

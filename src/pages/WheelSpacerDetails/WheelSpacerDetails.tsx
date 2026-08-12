@@ -8,8 +8,6 @@ export const WheelSpacerDetails = () => {
   const { id } = useParams<{ id: string }>();
 
   const { data, isLoading, isError } = useGetWheelSpacerByIdQuery(id!);
-
-  console.log('tires', data);
   return (
     <ProductDetailsPageLayout
       title={data?.title ?? 'title'}

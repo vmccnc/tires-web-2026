@@ -8,8 +8,6 @@ export const TireDetails = () => {
   const { id } = useParams<{ id: string }>();
 
   const { data, isLoading, isError } = useGetTireByIdQuery(id!);
-
-  console.log('tires', data);
   return (
     <ProductDetailsPageLayout
       title={data?.title ?? 'title'}

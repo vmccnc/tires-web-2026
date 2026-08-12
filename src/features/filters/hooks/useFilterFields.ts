@@ -25,8 +25,6 @@ export const useFilterFields = (
   const isWheels = filterType === 'wheels';
   const isWheelSpacers = filterType === 'wheelSpacers';
 
-  console.log(fields, 'testFields');
-
   //для шин
   const { currentData: tireWidths } = useGetTireFilterWidthQuery(
     isTires ? undefined : skipToken,
@@ -173,8 +171,6 @@ export const useFilterFields = (
       disabled: !options?.length,
     };
   });
-
-  console.log('resultFields', resultFields);
 
   return resultFields;
 };
