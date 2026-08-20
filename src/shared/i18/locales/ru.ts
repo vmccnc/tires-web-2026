@@ -381,6 +381,28 @@ export const ru = {
       pieces: 'шт.',
     },
     productDetailCard: {
+      tire: {
+        offRoad: { yes: 'Внедорожные' },
+      },
+      wheel: {
+        material: {
+          steel: 'Стальной диск',
+          noMaterial: 'Диск',
+        },
+        offRoad: { yes: 'Off-road' },
+        details: {
+          color: {
+            black: 'Черный',
+          },
+          material: {
+            steel: 'Сталь',
+          },
+        },
+      },
+      wheelSpacer: {
+        name: 'Проставка',
+        mm: 'мм',
+      },
       accordion: {
         headers: {
           header1: 'Характеристики',

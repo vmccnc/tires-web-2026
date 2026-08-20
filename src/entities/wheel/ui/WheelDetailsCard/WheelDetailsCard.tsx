@@ -8,22 +8,17 @@ import { ProductDetailsCard } from '@/entities/product/ui/ProductDetailsCard';
 import clsx from 'clsx';
 import type { Wheel } from '@/entities/wheel/model';
 import s from './WheelDetailsCard.module.scss';
-import { useTranslation } from '@/shared/lib/hooks';
 
 type Props = {
   wheel: Wheel;
+  title: string;
+  t: (key: string) => string;
   className?: string;
 };
 
-export const WheelDetailsCard = ({ wheel, className }: Props) => {
-  const wheelTitle = `${wheel.material} ${wheel.productType}`;
-  const { t } = useTranslation();
-
+export const WheelDetailsCard = ({ wheel, className, t, title }: Props) => {
+  console.log('wheeltest', wheel);
   const wheelCharacteristics = [
-    {
-      label: t('cards.productDetailCard.accordion.wheels.name'),
-      value: wheelTitle.toLocaleLowerCase(),
-    },
     //производителя надо добавить в БД
     // {
     //   label: t('cards.productDetailCard.accordion.wheels.manufacturer'),
@@ -55,11 +50,19 @@ export const WheelDetailsCard = ({ wheel, className }: Props) => {
     },
     {
       label: t('cards.productDetailCard.accordion.wheels.material'),
-      value: `${wheel.material} `,
+      value:
+        wheel.material && wheel.material !== '-'
+          ? t(
+              `cards.productDetailCard.wheel.details.material.${wheel.material}`,
+            )
+          : '-',
     },
     {
       label: t('cards.productDetailCard.accordion.wheels.color'),
-      value: `${wheel.color} `,
+      value:
+        wheel.color && wheel.color !== '-'
+          ? t(`cards.productDetailCard.wheel.details.color.${wheel.color}`)
+          : '-',
     },
   ];
 
@@ -72,7 +75,7 @@ export const WheelDetailsCard = ({ wheel, className }: Props) => {
   return (
     <ProductDetailsCard
       product={wheel}
-      title={wheelTitle}
+      title={title}
       className={clsx(className, s.tireDetailsCard)}
       characteristics={wheelCharacteristics}
       description={description}

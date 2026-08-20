@@ -47,7 +47,7 @@ export const ProductDetailsCard = ({
       <div className={s.cardInfo}>
         <div className={s.cardHeader}>
           <div className={s.cardHeaderTop}>
-            <h2 className={s.cardTitle}>{title}</h2>
+            <h1 className={s.cardTitle}>{title}</h1>
             <InStockIndicator inStock={inStock} />
           </div>
           <div className={s.cardHeaderBottom}>

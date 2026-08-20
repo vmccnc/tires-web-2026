@@ -3,13 +3,16 @@ import s from './TireCard.module.scss';
 import { ProductCard } from '@/entities/product/ui/ProductCard';
 import clsx from 'clsx';
 import { ROUTES } from '@/app/router';
+import { getProductTitle } from '@/entities/product/lib/helpers';
+import { useTranslation } from '@/shared/lib/hooks';
 type Props = {
   tire: Tire;
   className?: string;
 };
 
 export const TireCard = ({ tire, className }: Props) => {
-  const cardTitle = tire.title.replace(/\s*\([^)]*\)\s*$/, '');
+  const { t } = useTranslation();
+  const cardTitle = getProductTitle(tire, t);
   return (
     <ProductCard
       product={tire}

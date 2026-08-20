@@ -51,7 +51,6 @@ export const ProductDetailsPageLayout = ({
                   { label: title },
                 ]}
               />
-              <h1 className="visuallyHidden">Страница товара</h1>
             </section>
             <div className={s.layoutContent}>
               {productDetailsCard}

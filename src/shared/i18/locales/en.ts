@@ -384,6 +384,28 @@ export const en = {
       pieces: 'pcs',
     },
     productDetailCard: {
+      tire: {
+        offRoad: { yes: 'Off-road' },
+      },
+      wheel: {
+        material: {
+          steel: 'Steel Rim',
+          noMaterial: 'Rim',
+        },
+        offRoad: { yes: 'Off-road' },
+        details: {
+          color: {
+            black: 'Black',
+          },
+          material: {
+            steel: 'Steel',
+          },
+        },
+      },
+      wheelSpacer: {
+        name: 'Wheel Spacer',
+        mm: 'mm',
+      },
       accordion: {
         headers: {
           header1: 'Specifications',

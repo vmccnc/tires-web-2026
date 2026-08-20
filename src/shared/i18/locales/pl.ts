@@ -387,6 +387,28 @@ export const pl = {
       pieces: 'szt.',
     },
     productDetailCard: {
+      tire: {
+        offRoad: { yes: 'Terranowa' },
+      },
+      wheel: {
+        material: {
+          steel: 'Felga stalowa',
+          noMaterial: 'Felga',
+        },
+        offRoad: { yes: 'Terranowa' },
+        details: {
+          color: {
+            black: 'Czarny',
+          },
+          material: {
+            steel: 'Stal',
+          },
+        },
+      },
+      wheelSpacer: {
+        name: 'Dystans',
+        mm: 'mm',
+      },
       accordion: {
         headers: {
           header1: 'Specyfikacja',

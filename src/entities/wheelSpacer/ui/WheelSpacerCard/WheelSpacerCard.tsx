@@ -2,16 +2,20 @@ import type { WheelSpacer } from '@/entities/wheelSpacer/model';
 import s from './WheelSpacerCard.module.scss';
 import { ProductCard } from '@/entities/product/ui/ProductCard';
 import { ROUTES } from '@/app/router';
+import { useTranslation } from '@/shared/lib/hooks';
+import { getProductTitle } from '@/entities/product/lib/helpers';
 type Props = {
   wheelSpacer: WheelSpacer;
 };
 
 export const WheelSpacerCard = ({ wheelSpacer }: Props) => {
+  const { t } = useTranslation();
+  const cardTitle = getProductTitle(wheelSpacer, t);
   return (
     <ProductCard
       product={wheelSpacer}
       className={s.wheelSpacerCard}
-      title={wheelSpacer.title}
+      title={cardTitle}
       to={`${ROUTES.wheelSpacers}/${wheelSpacer.id}`}
     >
       {/*отдеььные свойства */}

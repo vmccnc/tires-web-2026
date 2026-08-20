@@ -1,29 +1,21 @@
-import type { TireDetails } from '@/entities/tire/model';
+import type { Tire } from '@/entities/tire/model';
 import s from './TireDetailsCard.module.scss';
 import { ProductDetailsCard } from '@/entities/product/ui/ProductDetailsCard';
 import clsx from 'clsx';
-import { matchSpeedIndexCode } from '@/entities/tire/lib/helpers';
-import { useTranslation } from '@/shared/lib/hooks';
+import { getLoadSpeedIndex } from '@/entities/product/lib/helpers';
 
 type Props = {
-  tire: TireDetails;
+  tire: Tire;
+  title: string;
+  t: (key: string) => string;
   className?: string;
 };
 
-export const TireDetailsCard = ({ tire, className }: Props) => {
-  //сматчим буквенный код из цифрового индекса скорости
-  const speedIndexCode = matchSpeedIndexCode(tire.speedIndex);
-  const loadSpeedIndexCode = speedIndexCode
-    ? `${tire.loadIndex}${speedIndexCode}`
-    : '';
-
-  const { t } = useTranslation();
+export const TireDetailsCard = ({ tire, className, title, t }: Props) => {
+  //сматчим буквенный код из цифрового индекса скорости с помощью хелпера
+  const loadSpeedIndex = getLoadSpeedIndex(tire.loadIndex, tire.speedIndex);
 
   const tireCharacteristics = [
-    {
-      label: t('cards.productDetailCard.accordion.tires.name'),
-      value: tire.title,
-    },
     {
       label: t('cards.productDetailCard.accordion.tires.manufacturer'),
       value: tire.manufacturer,
@@ -50,7 +42,7 @@ export const TireDetailsCard = ({ tire, className }: Props) => {
     },
     {
       label: t('cards.productDetailCard.accordion.tires.loadSpeedIndex'),
-      value: loadSpeedIndexCode,
+      value: loadSpeedIndex,
     },
   ];
 
@@ -63,7 +55,7 @@ export const TireDetailsCard = ({ tire, className }: Props) => {
   return (
     <ProductDetailsCard
       product={tire}
-      title={tire.protector}
+      title={title}
       className={clsx(className, s.tireDetailsCard)}
       characteristics={tireCharacteristics}
       description={description}
