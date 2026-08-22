@@ -3,6 +3,7 @@ import s from './Advantages.module.scss';
 import clsx from 'clsx';
 import { Section } from '@/shared/ui/Section/Section';
 import { useTranslation } from '@/shared/lib/hooks';
+import { Text } from '@/shared/ui/Text';
 
 export const Advantages = () => {
   const { t } = useTranslation();
@@ -18,7 +19,7 @@ export const Advantages = () => {
             <Icon className={clsx(s.advantageIcon, s[iconClassName])} />
             <div className={s.advantageContent}>
               <h3 className={s.advantageTitle}>{t(title)}</h3>
-              <p className={s.advantageDescription}>{t(description)}</p>
+              <Text variant="bodySmall">{t(description)}</Text>
             </div>
           </li>
         ))}

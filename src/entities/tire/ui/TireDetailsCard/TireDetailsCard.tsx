@@ -17,6 +17,11 @@ export const TireDetailsCard = ({ tire, className, title, t }: Props) => {
 
   const tireCharacteristics = [
     {
+      label: t('cards.productDetailCard.accordion.tires.protector'),
+      value: tire.protector,
+      className: 'bold',
+    },
+    {
       label: t('cards.productDetailCard.accordion.tires.manufacturer'),
       value: tire.manufacturer,
     },

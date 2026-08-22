@@ -1,5 +1,9 @@
 .homeFeedBack {
   padding: 100px 0 100px;
+
+  @media (max-width: $tablet) {
+    padding: 60px 0 60px;
+  }
 }
 .homeFeedBackItems {
   display: flex;
@@ -14,7 +18,11 @@
 .homeFeedBackItemWrapper {
   flex: 0 0 30%;
   min-width: 0;
-  border-right: 1px solid var(--color-border-primary);
+  border-right: 1px solid var(--color-border-secondary-muted);
+
+  @media (max-width: $tablet) {
+    flex: 0 0 clamp(40%, calc(40% + (1023px - 100vw) * 0.15), 90%);
+  }
 }
 .homeFeedBackItem {
   padding: 10px 20px;

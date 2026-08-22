@@ -21,12 +21,15 @@ export const ru = {
   footer: {
     contacts:
       '+48 500 405 819 insaturbo4x4.help@gmail.com Пн - Пт: 8:00 - 20:00',
-    address: 'Jerzego Badury 20, 56-416 Goszcz, Польша',
+    address: 'ул. Ежи Бадуры, 20, 56-416 Гощ, Польша',
     routes: {
       aboutUs: 'О нас',
       contacts: 'Контакты',
       feedback: 'Отзывы',
       guarantee: 'Гарантия',
+      cookiePreferences: 'Настройки cookie',
+      privacyPolicy: 'Политика конфиденциальности',
+      terms: 'Условия использования',
     },
     columns: {
       information: 'Информация',
@@ -34,6 +37,7 @@ export const ru = {
       contacts: 'Контакты',
       address: 'Наш адрес',
     },
+    copyright: '© InsaTurbo4×4 — Решения для бездорожья для водителей 4×4.',
   },
   pages: {
     home: {
@@ -410,6 +414,7 @@ export const ru = {
         },
         tires: {
           name: 'Название',
+          protector: 'Протектор',
           manufacturer: 'Производитель',
           type: 'Тип шины',
           width: 'Ширина, мм',

@@ -3,7 +3,7 @@ import { openModal } from '@/app/store/slices';
 import { Button } from '@/shared/ui/Button';
 import { Link } from 'react-router-dom';
 import s from './HeaderControls.module.scss';
-import { LanguageSelect } from '@/features/language/ui';
+import { LanguageSelect } from '@/features//language/ui';
 
 type HeaderControlsProps = {
   controls: readonly {

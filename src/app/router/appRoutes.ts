@@ -18,6 +18,9 @@ import { Payment } from '@/pages/Payment';
 import { WheelSpacerDetails } from '@/pages/WheelSpacerDetails';
 import { TireDetails } from '@/pages/TireDetails';
 import { WheelDetails } from '@/pages/WheelDetails';
+import { CookiePreferences } from '@/pages/CookiePreferences/CookiePreferences';
+import { PrivacyPolicy } from '@/pages/PrivacyPolicy/PrivacyPolicy';
+import { Terms } from '@/pages/Terms';
 
 export const appRoutes = [
   {
@@ -99,5 +102,17 @@ export const appRoutes = [
   {
     path: ROUTES.payment,
     component: Payment,
+  },
+  {
+    path: ROUTES.cookiePreferences,
+    component: CookiePreferences,
+  },
+  {
+    path: ROUTES.privacyPolicy,
+    component: PrivacyPolicy,
+  },
+  {
+    path: ROUTES.terms,
+    component: Terms,
   },
 ] as const;

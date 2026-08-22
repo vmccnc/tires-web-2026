@@ -8,10 +8,14 @@
   justify-content: center;
   padding: 4px 10px;
   font-weight: 500;
-  font-size: 28px;
-  line-height: 40px;
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: clamp(20px, 2.85vw, 40px);
   background-color: transparent;
   width: 100%;
+
+  @media (max-width: $tablet) {
+    padding: 8px 10px;
+  }
 }
 
 .active {

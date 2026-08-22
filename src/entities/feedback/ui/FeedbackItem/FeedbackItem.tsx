@@ -2,6 +2,7 @@ import type { Feedback } from '@/entities/feedback/model';
 import s from './FeedbackItem.module.scss';
 import { FeedbackRating } from '@/entities/feedback/ui/FeedbackRating';
 import clsx from 'clsx';
+import { Text } from '@/shared/ui/Text';
 
 type FeedbackItemProps = {
   review: Feedback;
@@ -30,7 +31,12 @@ export const FeedbackItem = ({
           )}
         </div>
       </div>
-      <p className={clsx(textClassName, s.feedbackItemText)}>{review.text}</p>
+      <Text
+        className={clsx(textClassName, s.feedbackItemText)}
+        variant="bodySmall"
+      >
+        {review.text}
+      </Text>
     </article>
   );
 };

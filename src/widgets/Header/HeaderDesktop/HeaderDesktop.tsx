@@ -24,7 +24,7 @@ export const HeaderDesktop = ({
             className={s.headerNavBar}
             navLinkClassName={s.headerNavBarLink}
           />
-          <HeaderControls controls={headerRoutes.controls} />
+          <HeaderControls controls={headerRoutes.controls} isLanguageSelect />
         </div>
       </div>
       <div className={s.headerBottom}>

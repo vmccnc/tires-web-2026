@@ -27,6 +27,9 @@ export const pl = {
       contacts: 'Kontakt',
       feedback: 'Opinie',
       guarantee: 'Gwarancja',
+      cookiePreferences: 'Ustawienia plików cookie',
+      privacyPolicy: 'Polityka prywatności',
+      terms: 'Warunki korzystania',
     },
     columns: {
       information: 'Informacje',
@@ -34,6 +37,7 @@ export const pl = {
       contacts: 'Kontakt',
       address: 'Nasz adres',
     },
+    copyright: '© InsaTurbo4×4 — Rozwiązania off-road dla kierowców 4×4.',
   },
   pages: {
     home: {
@@ -134,7 +138,7 @@ export const pl = {
           question:
             'Czym opony Insa Turbo różnią się od nowych opon innych marek?',
           answer:
-            'Insa Turbo to producent z ponad 25-letnim doświadczeniem na rynku międzynarodowym. Marka oferuje wysokiej jakości opony bieżnikowane, zapewniające korzystne połączenie ceny, niezawodności i właściwości terenowych.',
+            'Insa Turbo to producent z ponad 25-letnim doświadczeniem na rynku międzynarodowym. Marka oferuje wysokiej jakości opony bieżnikowane, zapewniające dobry stosunek ceny do jakości i niezawodności.',
         },
 
         types: {
@@ -416,6 +420,7 @@ export const pl = {
         },
         tires: {
           name: 'Nazwa',
+          protector: 'Protector',
           manufacturer: 'Producent',
           type: 'Typ opony',
           width: 'Szerokość, mm',

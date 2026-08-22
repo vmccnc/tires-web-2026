@@ -13,6 +13,7 @@ type SocialsProps = {
   items: readonly SocialItem[];
   className?: string;
   linkClassName?: string;
+  iconClassName?: string;
   labelBlockClassName?: string;
   showLabel?: boolean;
   children?: (item: SocialItem) => ReactNode;
@@ -22,6 +23,7 @@ export const Socials = ({
   items,
   className,
   linkClassName,
+  iconClassName,
   labelBlockClassName,
   showLabel = false,
   children,
@@ -42,7 +44,7 @@ export const Socials = ({
             className={clsx(s.link, linkClassName)}
           >
             <span className={clsx(s.labelBlock, labelBlockClassName)}>
-              <Icon className={s.icon} />
+              <Icon className={clsx(iconClassName, s.icon)} />
               {showLabel && <span>{t(label)}</span>}
             </span>
 
