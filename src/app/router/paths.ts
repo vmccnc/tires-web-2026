@@ -19,4 +19,7 @@ export const ROUTES = {
   cart: '/cart',
   returnExchange: '/returnExchange',
   payment: 'payment',
+  cookiePreferences: '/cookie-preferences',
+  privacyPolicy: '/privacy-policy',
+  terms: '/terms',
 } as const;

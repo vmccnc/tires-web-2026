@@ -1,4 +1,4 @@
-import { Navigation, Warning, CircularArrow, UserHelp } from '@/assets/icons';
+import { Navigation, Warning, UserHelp } from '@/assets/icons';
 
 export const ADVANTAGES = [
   {
@@ -17,13 +17,6 @@ export const ADVANTAGES = [
   },
   {
     id: 3,
-    Icon: CircularArrow,
-    iconClassName: 'circularArrowIcon',
-    title: 'pages.home.advantages.returns.title',
-    description: 'pages.home.advantages.returns.description',
-  },
-  {
-    id: 4,
     Icon: UserHelp,
     iconClassName: 'userHelpIcon',
     title: 'pages.home.advantages.assistance.title',

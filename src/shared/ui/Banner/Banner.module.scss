@@ -13,24 +13,22 @@
   }
 
   .bannerContent {
-    width: 750px;
     display: flex;
     align-self: center;
     flex-direction: column;
+    max-width: 673px;
   }
 
   .bannerTitle {
     font-family: var(--font-unbounded);
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 40px;
     text-transform: uppercase;
     color: inherit;
+    margin-bottom: 8px;
   }
 
   .bannerDescription {
-    font-size: 20px;
-    line-height: 26px;
+    font-size: clamp(14px, 1.4vw, 20px);
+    line-height: clamp(14px, 1.8vw, 26px);
     color: var(--color-text-secondary-muted);
     display: flex;
     flex-direction: column;
@@ -42,6 +40,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+
+    @media (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .bannerBreadcrumbs {

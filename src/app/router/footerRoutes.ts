@@ -23,4 +23,25 @@ export const footerRoutes = {
       path: ROUTES.guarantee,
     },
   ],
+
+  contacts: [
+    {
+      labelKey: 'footer.routes.contacts',
+      path: ROUTES.contacts,
+    },
+  ],
+  legal: [
+    {
+      labelKey: 'footer.routes.cookiePreferences',
+      path: ROUTES.cookiePreferences,
+    },
+    {
+      labelKey: 'footer.routes.privacyPolicy',
+      path: ROUTES.privacyPolicy,
+    },
+    {
+      labelKey: 'footer.routes.terms',
+      path: ROUTES.terms,
+    },
+  ],
 } as const;

@@ -1,4 +1,9 @@
-import { CartIcon, HeartIcon, ProfileIcon } from '@/assets/icons';
+import {
+  CartIcon,
+  HeartIcon,
+  ProfileIcon,
+  ProfileMobIcon,
+} from '@/assets/icons';
 
 import { ROUTES } from './paths';
 
@@ -45,17 +50,30 @@ export const headerRoutes = {
     {
       icon: HeartIcon,
       path: ROUTES.favorites,
-      protected: false,
+      requiresAuth: false,
     },
     {
       icon: CartIcon,
       path: ROUTES.cart,
-      protected: false,
+      requiresAuth: false,
     },
     {
       icon: ProfileIcon,
       path: ROUTES.profile,
-      protected: true,
+      requiresAuth: true,
+    },
+  ],
+
+  controlsMobile: [
+    {
+      icon: ProfileMobIcon,
+      path: ROUTES.profile,
+      requiresAuth: true,
+    },
+    {
+      icon: CartIcon,
+      path: ROUTES.cart,
+      requiresAuth: false,
     },
   ],
 } as const;

@@ -3,6 +3,7 @@ import s from './ProductAccordion.module.scss';
 import { Accordion } from '@/shared/ui/Accordion/Accordion';
 import { Arrow } from '@/assets/icons';
 import { useTranslation } from '@/shared/lib/hooks';
+import clsx from 'clsx';
 
 type ProductAccordionProps = {
   characteristics: ProductCharacteristic[];
@@ -45,12 +46,19 @@ export const ProductAccordion = ({
         ),
         children: (
           <ul className={s.productAccordionChars}>
-            {children.map(({ label, value }) => (
+            {children.map(({ label, value, className }) => (
               <li key={`${label}-${value}`} className={s.productAccordionChar}>
                 {label && (
                   <p className={s.productAccordionCharLabel}>{label}</p>
                 )}
-                <p className={s.productAccordionCharValue}>{value}</p>
+                <p
+                  className={clsx(
+                    s.productAccordionCharValue,
+                    className && s[className],
+                  )}
+                >
+                  {value}
+                </p>
               </li>
             ))}
           </ul>

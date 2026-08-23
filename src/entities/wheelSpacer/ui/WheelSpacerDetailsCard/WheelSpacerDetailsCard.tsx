@@ -12,20 +12,22 @@ import { ProductDetailsCard } from '@/entities/product/ui/ProductDetailsCard';
 import clsx from 'clsx';
 import type { WheelSpacer } from '@/entities/wheelSpacer/model';
 import s from './WheelSpacerDetailsCard.module.scss';
-import { useTranslation } from '@/shared/lib/hooks';
 
 type Props = {
   spacer: WheelSpacer;
+  title: string;
+  t: (key: string) => string;
   className?: string;
 };
 
-export const WheelSpacersDetailsCard = ({ spacer, className }: Props) => {
-  const { t } = useTranslation();
+export const WheelSpacersDetailsCard = ({
+  spacer,
+  className,
+  t,
+  title,
+}: Props) => {
+  console.log(spacer);
   const spacerCharacteristics = [
-    {
-      label: t('cards.productDetailCard.accordion.wheelSpacers.name'),
-      value: spacer.title,
-    },
     // Производителя нужно добавить в БД
     // {
     //   label: 'Производитель',
@@ -53,7 +55,7 @@ export const WheelSpacersDetailsCard = ({ spacer, className }: Props) => {
   return (
     <ProductDetailsCard
       product={spacer}
-      title={spacer.productType}
+      title={title}
       className={clsx(className, s.spacersDetailsCard)}
       characteristics={spacerCharacteristics}
       description={description}

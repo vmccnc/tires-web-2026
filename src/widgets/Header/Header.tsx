@@ -1,11 +1,7 @@
-import { headerRoutes } from '@/app/router';
-import { NavBar } from '@/shared/ui/NavBar';
 import s from './Header.module.scss';
-import clsx from 'clsx';
-import { SearchInput } from '@/features/search/ui/SearchInput';
 import { matchPath, useLocation, useNavigate } from 'react-router-dom';
-import { HeaderControls } from './HeaderControls';
-import { Logo } from '@/shared/ui/Logo/Logo';
+import { HeaderDesktop } from './HeaderDesktop';
+import { HeaderMobile } from './HeaderMobile';
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -29,32 +25,8 @@ export const Header = () => {
   };
   return (
     <header className={s.header}>
-      <div className={s.headerTop}>
-        <div className={clsx('container', s.headerTopContent)}>
-          <NavBar
-            items={headerRoutes.pages}
-            className={s.headerNavBar}
-            navLinkClassName={s.headerNavBarLink}
-          />
-          <HeaderControls />
-        </div>
-      </div>
-      <div className={s.headerBottom}>
-        <div className={clsx('container', s.wrapper)}>
-          <Logo />
-          <NavBar
-            items={headerRoutes.catalog}
-            className={s.headerNavBar}
-            navLinkClassName={s.headerNavBarLink}
-          />
-
-          <SearchInput
-            className={s.headerInput}
-            value={search}
-            onSearchChange={handleInputChange}
-          />
-        </div>
-      </div>
+      <HeaderDesktop onSearchChange={handleInputChange} search={search} />
+      <HeaderMobile onSearchChange={handleInputChange} search={search} />
     </header>
   );
 };

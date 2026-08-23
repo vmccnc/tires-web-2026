@@ -5,5 +5,9 @@
   .promoBannerContent.promoBannerContent {
     align-self: start;
     padding-top: 80px;
+
+    @media (max-width: $tablet) {
+      padding-top: 64px;
+    }
   }
 }

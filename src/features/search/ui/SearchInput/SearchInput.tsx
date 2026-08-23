@@ -1,11 +1,12 @@
 import clsx from 'clsx';
 import { type ChangeEvent } from 'react';
 
-import { SearchIcon } from '@/assets/icons';
+import { CloseIcon, SearchIcon } from '@/assets/icons';
 
 import s from './SearchInput.module.scss';
 import { Input } from '@/shared/ui/Input';
 import { useTranslation } from '@/shared/lib/hooks';
+import { Button } from '@/shared/ui/Button';
 
 export type SearchInputProps = {
   className?: string;
@@ -15,6 +16,7 @@ export type SearchInputProps = {
   placeholder?: string;
   onSearchChange: (query: string) => void;
   onSearchSubmit?: (query: string) => void;
+  onHideInput?: () => void;
 };
 
 export const SearchInput = ({
@@ -23,6 +25,7 @@ export const SearchInput = ({
   value,
   placeholder,
   onSearchChange,
+  onHideInput,
 }: SearchInputProps) => {
   const { t } = useTranslation();
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -31,6 +34,15 @@ export const SearchInput = ({
   };
 
   const resolvedPlaceholder = placeholder ?? t('header.search.placeholder');
+  const handleResetInput = () => {
+    if (value) {
+      onSearchChange('');
+      return;
+    }
+    onHideInput?.();
+
+    // setShowSearchInput(false);
+  };
 
   return (
     <div className={clsx(s.searchInput, className)}>
@@ -45,6 +57,13 @@ export const SearchInput = ({
         autoComplete="off"
         onChange={handleChange}
       />
+      <Button
+        variant="unset"
+        className={s.searchCloseBtn}
+        onClick={handleResetInput}
+      >
+        <CloseIcon />
+      </Button>
     </div>
   );
 };

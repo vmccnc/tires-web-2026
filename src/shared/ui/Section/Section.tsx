@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import s from './Section.module.scss';
+import { Text } from '@/shared/ui/Text';
 
 type SectionProps = {
   title: string;
@@ -20,7 +21,9 @@ export const Section = ({
     <section className={clsx(s.section, className)}>
       <div className="container">
         <div className={clsx(hasWrapper && s.wrapper)}>
-          <h2 className={clsx(s.title, titleClassName)}>{title}</h2>
+          <Text className={clsx(s.title, titleClassName)} as="h2" variant="h2">
+            {title}
+          </Text>
           {children}
         </div>
       </div>

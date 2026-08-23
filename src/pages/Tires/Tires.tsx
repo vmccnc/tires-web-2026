@@ -9,6 +9,7 @@ export const Tires = () => {
   const params = usePaginationParams<TireParams>();
   const { data, isLoading, isError } = useGetTiresQuery(params);
   const tires = data?.content;
+  console.log(tires);
 
   return (
     <ProductPageLayout

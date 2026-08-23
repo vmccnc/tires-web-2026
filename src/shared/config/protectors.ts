@@ -51,12 +51,12 @@ export const protectors: ProtectorOption[] = [
   },
   {
     id: 7,
-    name: 'Winter Grip',
+    name: 'K2',
     image: winterGrip,
   },
   {
     id: 8,
-    name: 'EcoDrive',
+    name: 'Risco',
     image: ecoDrive,
   },
 ];

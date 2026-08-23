@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import type { ReactNode } from 'react';
 import { Button, type VariantBtn } from '@/shared/ui/Button';
 import { Breadcrumbs, type BreadcrumbItem } from '@/shared/ui/BreadCrumbs';
+import { Text } from '../Text';
 
 export type BannerLink = {
   to: string;
@@ -39,7 +40,9 @@ export const Banner = ({
           <Breadcrumbs className={s.bannerBreadcrumbs} items={breadcrumbs} />
         )}
         <div className={clsx(contentClassName, s.bannerContent)}>
-          <h2 className={s.bannerTitle}>{bannerTitle}</h2>
+          <Text as={'h2'} variant="h2" className={s.bannerTitle}>
+            {bannerTitle}
+          </Text>
           <p className={s.bannerDescription}>{children}</p>
           {links && (
             <div className={s.bannerLinks}>

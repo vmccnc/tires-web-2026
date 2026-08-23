@@ -1,10 +1,18 @@
 .homeAdvantages {
   padding: 80px 0;
+
+  @media (max-width: $tablet) {
+    padding-top: 60px;
+  }
 }
 
 .advantages {
   display: flex;
   gap: 20px;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
 }
 
 .advantageItem {
@@ -13,6 +21,14 @@
   padding: 16px 16px 16px 41px;
   &:not(:last-child) {
     border-right: 1px solid var(--color-border-secondary-muted);
+    @media (max-width: $tablet) {
+      border-right: none;
+    }
+  }
+  @media (max-width: $tablet) {
+    padding: 16px;
+    background-color: var(--color-background-secondary-muted);
+    min-height: 102px;
   }
 }
 
@@ -30,13 +46,6 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 1;
-}
-
-.advantageDescription {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: -0.07px;
 }
 
 .navigationIcon {

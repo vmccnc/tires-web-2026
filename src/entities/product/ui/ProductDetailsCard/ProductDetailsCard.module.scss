@@ -1,6 +1,6 @@
 .productDetailsCard {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   gap: 32px;
 }
 
@@ -41,9 +41,10 @@
 }
 
 .cardTitle {
-  font-weight: 400;
-  font-size: 28px;
-  line-height: 1;
+  font-family: var(--font-unbounded);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 46px;
   text-transform: uppercase;
 }
 

@@ -26,7 +26,10 @@ export const en = {
       aboutUs: 'About Us',
       contacts: 'Contacts',
       feedback: 'Reviews',
-      guarantee: 'Warranty',
+      guarantee: 'Guarantee',
+      cookiePreferences: 'Cookie Preferences',
+      privacyPolicy: 'Privacy Policy',
+      terms: 'Terms of Use',
     },
 
     columns: {
@@ -35,6 +38,7 @@ export const en = {
       contacts: 'Contacts',
       address: 'Our Address',
     },
+    copyright: '© InsaTurbo4×4 — Off-road solutions for 4×4 drivers.',
   },
 
   pages: {
@@ -135,7 +139,7 @@ export const en = {
           question:
             'How are Insa Turbo tires different from new tires made by other brands?',
           answer:
-            'Insa Turbo is a manufacturer with more than 25 years of experience in the international market. The brand offers high-quality retread tires with a strong balance of price, reliability and off-road performance.',
+            'Insa Turbo is a manufacturer with more than 25 years of experience in the international market. The brand offers high-quality retreaded tires with a good balance of price, quality, and reliability.',
         },
 
         types: {
@@ -384,6 +388,28 @@ export const en = {
       pieces: 'pcs',
     },
     productDetailCard: {
+      tire: {
+        offRoad: { yes: 'Off-road' },
+      },
+      wheel: {
+        material: {
+          steel: 'Steel Rim',
+          noMaterial: 'Rim',
+        },
+        offRoad: { yes: 'Off-road' },
+        details: {
+          color: {
+            black: 'Black',
+          },
+          material: {
+            steel: 'Steel',
+          },
+        },
+      },
+      wheelSpacer: {
+        name: 'Wheel Spacer',
+        mm: 'mm',
+      },
       accordion: {
         headers: {
           header1: 'Specifications',
@@ -391,6 +417,7 @@ export const en = {
         },
         tires: {
           name: 'Name',
+          protector: 'Protector',
           manufacturer: 'Manufacturer',
           type: 'Tire Type',
           width: 'Width, mm',
