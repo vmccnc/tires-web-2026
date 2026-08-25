@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { ROUTES } from '@/app/router';
 import { getProductTitle } from '@/entities/product/lib/helpers';
 import { useTranslation } from '@/shared/lib/hooks';
+import { Text } from '@/shared/ui/Text';
 type Props = {
   tire: Tire;
   className?: string;
@@ -20,7 +21,7 @@ export const TireCard = ({ tire, className }: Props) => {
       title={cardTitle}
       to={`${ROUTES.tires}/${tire.id}`}
     >
-      <p className={s.text}>{tire.protector ?? ''}</p>
+      <Text variant="smallCardProtectorText">{tire.protector ?? ''}</Text>
     </ProductCard>
   );
 };

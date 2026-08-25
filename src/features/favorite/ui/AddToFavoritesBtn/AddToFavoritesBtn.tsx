@@ -7,9 +7,13 @@ import { HeartIcon } from '@/assets/icons';
 type LikeBtnProps = {
   id?: number;
   className?: string;
+  iconClassName?: string;
 };
 
-export const AddToFavoritesBtn = ({ className }: LikeBtnProps) => {
+export const AddToFavoritesBtn = ({
+  className,
+  iconClassName,
+}: LikeBtnProps) => {
   const handeAddToFavorites = () => {};
   return (
     <Button
@@ -17,7 +21,7 @@ export const AddToFavoritesBtn = ({ className }: LikeBtnProps) => {
       className={clsx(className, s.addToFavoritesBtn)}
       onClick={handeAddToFavorites}
     >
-      <HeartIcon className={s.icon} />
+      <HeartIcon className={clsx(iconClassName, s.icon)} />
     </Button>
   );
 };

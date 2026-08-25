@@ -44,6 +44,7 @@ export { default as QuoteIcon } from './Quote.svg?react';
 export { default as ShieldIcon } from './Shield.svg?react';
 export { default as UserCheckIcon } from './UserCheck.svg?react';
 export { default as ProfileMobIcon } from './ProfileMob.svg?react';
+export { default as FilterIcon } from './Filter.svg?react';
 
 //temp brands
 export { default as MountainBrand } from './MountainBrand.svg?react';

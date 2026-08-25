@@ -7,6 +7,7 @@ import { AddToFavoritesBtn } from '@/features/favorite/ui/AddToFavoritesBtn';
 import fallbackImage from '@/assets/images/fallbackProduct.jpg';
 import { handleImageError } from '@/shared/lib/helpers';
 import { useTranslation } from '@/shared/lib/hooks';
+import { Text } from '@/shared/ui/Text';
 
 export type ProductCardProps = {
   product: Product;
@@ -26,7 +27,10 @@ export const ProductCard = ({
   const { t } = useTranslation();
   return (
     <Link className={clsx(className, s.productCard)} to={to}>
-      <AddToFavoritesBtn className={s.productCardFavorites} />
+      <AddToFavoritesBtn
+        className={s.productCardFavorites}
+        iconClassName={s.favoritesIcon}
+      />
       <div className={s.imageWrapper}>
         <img
           className={s.image}
@@ -37,7 +41,10 @@ export const ProductCard = ({
       </div>
 
       <div className={s.bottom}>
-        <h3 className={s.title}>{title}</h3>
+        <Text as={'h3'} variant="bodySmall" className={s.title}>
+          {title}
+        </Text>
+
         {children}
         <div className={s.priceBlock}>
           <span className={s.price}>{product.price} zl.</span>

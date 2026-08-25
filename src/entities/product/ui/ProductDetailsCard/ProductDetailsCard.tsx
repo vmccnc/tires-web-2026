@@ -11,6 +11,7 @@ import { Button } from '@/shared/ui/Button';
 import { ProductAccordion } from '@/entities/product/ui/ProductAccordion';
 import { AddToFavoritesBtn } from '@/features/favorite/ui/AddToFavoritesBtn';
 import { useTranslation } from '@/shared/lib/hooks';
+import { Text } from '@/shared/ui/Text';
 
 type ProductDetailsCardProps = {
   product: ProductDetails;
@@ -47,7 +48,9 @@ export const ProductDetailsCard = ({
       <div className={s.cardInfo}>
         <div className={s.cardHeader}>
           <div className={s.cardHeaderTop}>
-            <h1 className={s.cardTitle}>{title}</h1>
+            <Text as={'h1'} variant="h1" className={s.cardTitle}>
+              {title}
+            </Text>
             <InStockIndicator inStock={inStock} />
           </div>
           <div className={s.cardHeaderBottom}>
