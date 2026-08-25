@@ -17,13 +17,6 @@ export const WheelCard = ({ wheel }: Props) => {
       className={s.wheelCard}
       title={cardTitle}
       to={`${ROUTES.wheels}/${wheel.id}`}
-    >
-      {/* <p className={s.text}>
-        {wheel.diameter}"
-        {wheel.material && wheel.material !== '-'
-          ? `, ${wheel.material.toLowerCase()}`
-          : ''}
-      </p> */}
-    </ProductCard>
+    ></ProductCard>
   );
 };

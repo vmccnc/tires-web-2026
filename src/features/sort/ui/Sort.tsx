@@ -9,9 +9,14 @@ import clsx from 'clsx';
 export type SortProps = {
   sortOptions: SortOption[];
   className?: string;
+  selectClassName?: string;
 };
 
-export const Sort = ({ sortOptions, className }: SortProps) => {
+export const Sort = ({
+  sortOptions,
+  className,
+  selectClassName,
+}: SortProps) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const sortField = searchParams.get('sortField');
   const sortDirection = searchParams.get('sortDirection');
@@ -63,7 +68,7 @@ export const Sort = ({ sortOptions, className }: SortProps) => {
       name="sort"
       value={sortValue}
       wrapperClassName={clsx(className, s.sortFilter)}
-      className={s.sortSelect}
+      className={clsx(selectClassName, s.sortSelect)}
       iconClassName={s.sortSelectIcon}
       onChange={handleSortChange}
     />

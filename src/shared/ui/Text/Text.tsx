@@ -3,7 +3,14 @@ import clsx from 'clsx';
 
 import s from './Text.module.scss';
 
-type TextVariant = 'h1' | 'h2' | 'h3' | 'body' | 'bodySmall' | 'caption';
+type TextVariant =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'body'
+  | 'bodySmall'
+  | 'caption'
+  | 'smallCardProtectorText';
 
 type TextProps = {
   children: ReactNode;

@@ -5,6 +5,11 @@
     flex-direction: column;
     gap: 32px;
     padding: 32px 0;
+
+    @media (max-width: $tablet) {
+      padding: 20px 0;
+      gap: 20px;
+    }
   }
 
   .layoutPagination {
@@ -18,25 +23,65 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
 }
 
-.breadcrumbs {
-  margin-bottom: 16px;
-  font-size: 12px;
-}
+.actions {
+  @media (max-width: $tablet) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.title {
-  font-family: var(--font-unbounded);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 40px;
-  text-transform: uppercase;
+  .sortFilter {
+    @media (max-width: $tablet) {
+      width: auto;
+      min-width: 167px;
+    }
+
+    @media (max-width: 400px) {
+      width: auto;
+      min-width: 145px;
+    }
+  }
+  .filterTrigger {
+    display: none;
+
+    @media (max-width: $tablet) {
+      display: flex;
+    }
+  }
+
+  .sortInner.sortInner,
+  .filterTrigger {
+    min-width: 167px;
+    @media (max-width: 400px) {
+      min-width: auto;
+      font-size: 12px;
+      line-height: 16px;
+      min-width: 145px;
+    }
+  }
+}
+.breadcrumbsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .body {
   display: grid;
   grid-template-columns: 228px minmax(0, 1fr);
   gap: 32px;
+  @media (max-width: $tablet) {
+    display: block;
+  }
 }
 
 .bodyWithoutFilters {
@@ -45,6 +90,9 @@
 
 .filters {
   min-width: 0;
+  @media (max-width: $tablet) {
+    display: none;
+  }
 }
 
 .content {

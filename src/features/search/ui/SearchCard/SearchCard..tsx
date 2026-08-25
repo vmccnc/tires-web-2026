@@ -2,6 +2,7 @@ import type { SearchProduct } from '@/features/search/model';
 import s from './SearchCard.module.scss';
 import { ProductCard } from '@/entities/product/ui/ProductCard';
 import { getProductPath } from '@/features/search/lib/helpers';
+import { Text } from '@/shared/ui/Text';
 type Props = {
   searchProduct: SearchProduct;
 };
@@ -18,10 +19,10 @@ export const SearchCard = ({ searchProduct }: Props) => {
       title={cardTitle}
       to={getProductPath(searchProduct)}
     >
-      <p className={s.text}>
+      <Text variant="smallCardProtectorText">
         {searchProduct.productType === 'Tire' &&
           getTireProtectorName(searchProduct.title)}
-      </p>
+      </Text>
     </ProductCard>
   );
 };

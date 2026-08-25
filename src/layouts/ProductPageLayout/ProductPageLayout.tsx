@@ -12,6 +12,8 @@ import { ROUTES } from '@/app/router';
 import { getPageState } from '@/layouts/lib';
 import { PageStateWidget } from '@/widgets/PageState/ui/PageStateWidget';
 import { useTranslation } from '@/shared/lib/hooks';
+import { Text } from '@/shared/ui/Text';
+import { MobileFilterMenu } from '@/features/filters/ui/MobileFilterMenu';
 
 type Props = {
   title: string;
@@ -59,7 +61,7 @@ export const ProductPageLayout = ({
         ) : (
           <div className={s.layoutWrapper}>
             <section className={s.header}>
-              <div>
+              <div className={s.breadcrumbsBlock}>
                 {category && (
                   <Breadcrumbs
                     items={[
@@ -71,12 +73,25 @@ export const ProductPageLayout = ({
                     ]}
                   />
                 )}
-
-                <h1 className={s.title}>{t(title)}</h1>
+                <Text as={'h1'} variant="h1" className={s.title}>
+                  {t(title)}
+                </Text>
               </div>
 
               <div className={s.actions}>
-                <Sort sortOptions={PRODUCT_SORT_OPTIONS} />
+                {filterType && (
+                  <MobileFilterMenu
+                    triggerClassName={s.filterTrigger}
+                    filterType={filterType}
+                    page={page}
+                  />
+                )}
+
+                <Sort
+                  sortOptions={PRODUCT_SORT_OPTIONS}
+                  className={s.sortFilter}
+                  selectClassName={s.sortInner}
+                />
               </div>
             </section>
 
