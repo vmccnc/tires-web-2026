@@ -11,11 +11,11 @@ export const getProductTitle = (
     case 'Tire': {
       const tire = product as Tire;
       const loadIndex = getLoadSpeedIndex(tire.loadIndex, tire.speedIndex);
-      return `${tire.manufacturer} ${tire.width}/${tire.profile} R${tire.diameter}${
+      return `${tire.manufacturer} ${tire.width}/${tire.profile} R${tire.diameter} ${loadIndex}${
         tire.offroadUsingType
           ? ` ${t('cards.productDetailCard.tire.offRoad.yes')}`
           : ''
-      } ${loadIndex}`;
+      } `;
     }
 
     case 'Wheel': {
