@@ -50,6 +50,7 @@ export const ProductDetailsPageLayout = ({
                   },
                   { label: title },
                 ]}
+                className={s.breadCrumbs}
               />
             </section>
             <div className={s.layoutContent}>

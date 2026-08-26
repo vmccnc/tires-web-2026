@@ -1,1 +1,2 @@
-export * from './ProductGalleryDesktop';
+export * from './ProductGallery';
+export * from './ProductGalleryMobile';

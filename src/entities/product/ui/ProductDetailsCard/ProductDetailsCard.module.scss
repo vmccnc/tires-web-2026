@@ -2,31 +2,58 @@
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   gap: 32px;
+  @media (max-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-.productDetailsCardFavorites {
-  width: 23px;
-  height: 20px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+.galleryDesktop {
+  @media (max-width: $tablet) {
+    display: none;
+  }
 }
 
-.productDetailsCardGallery {
-  width: 100%;
-  position: relative;
+.galleryTablet {
+  display: none;
+  @media (max-width: $tablet) {
+    display: block;
+  }
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.galleryMobile {
+  display: none;
+
+  @media (max-width: $mobile) {
+    display: block;
+  }
 }
 
 .cardInfo {
   display: flex;
   flex-direction: column;
   gap: 40px;
+
+  @media (max-width: $tablet) {
+    gap: 32px;
+  }
 }
 
 .cardHeader {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.cardTitle {
+  @media (max-width: 400px) {
+    max-height: 64px;
+    overflow: hidden;
+  }
 }
 
 .cardHeaderTop {
@@ -38,13 +65,15 @@
 .cardHeaderBottom {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: $tablet) {
+    flex-direction: row-reverse;
+  }
 }
 
 .cardPrice {
   font-family: var(--font-unbounded);
   font-weight: 500;
-  font-size: 20px;
-  line-height: 40px;
   text-transform: uppercase;
   display: inline-flex;
   align-items: baseline;
@@ -52,6 +81,7 @@
 
   > span {
     font-family: 'Inter';
+    font-weight: 400;
     font-size: 15px;
     line-height: 40px;
     letter-spacing: -0.1em;
