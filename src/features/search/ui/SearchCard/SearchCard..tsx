@@ -19,7 +19,7 @@ export const SearchCard = ({ searchProduct }: Props) => {
       title={cardTitle}
       to={getProductPath(searchProduct)}
     >
-      <Text variant="smallCardProtectorText">
+      <Text variant="ultraSmall">
         {searchProduct.productType === 'Tire' &&
           getTireProtectorName(searchProduct.title)}
       </Text>

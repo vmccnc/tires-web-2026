@@ -1,5 +1,24 @@
 .ourValues {
   padding: 100px 0 0;
+  .ourValuesEyebrow {
+    text-align: center;
+    color: var(--color-text-primary-faint);
+    margin-bottom: 0;
+  }
+
+  .ourValuesTitle {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 100px;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 40px;
+    }
+    @media (max-width: $sm) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
 }
 
 .ourValuesHeader {
@@ -7,24 +26,9 @@
   flex-direction: column;
   gap: 12px;
   align-items: center;
-}
-
-.ourValuesEyebrow {
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: -0.07px;
-  text-align: center;
-  color: var(--color-text-primary-faint);
-}
-
-.ourValuesTitle {
-  font-family: var(--font-unbounded);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 40px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 100px;
+  @media (max-width: $mobile) {
+    gap: 4px;
+  }
 }
 
 .ourValuesIconWrapper {
@@ -35,10 +39,21 @@
   justify-content: center;
 }
 
+.ourValuesViewport {
+  @media (max-width: $tablet) {
+    overflow: hidden;
+  }
+}
+
 .ourValuesList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+
+  @media (max-width: $mobile) {
+    display: flex;
+    gap: 16px;
+  }
 }
 
 .ourValuesItem {
@@ -48,13 +63,24 @@
   justify-content: space-between;
   padding: 32px;
   border: 1px solid var(--color-border-secondary-muted);
+  min-width: 0;
+
+  @media (max-width: $tablet) {
+    padding: 16px;
+  }
+  @media (max-width: $mobile) {
+    flex: 0 0 calc((100% - 48px - 32px) / 2);
+  }
+  @media (max-width: 550px) {
+    flex-basis: 70%;
+  }
+
+  @media (max-width: $sm) {
+    flex-basis: calc(100% - 48px);
+  }
 }
 
 .ourValuesItemTitle {
-  font-family: var(--font-unbounded);
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 28px;
   text-transform: uppercase;
   margin-bottom: 12px;
 }

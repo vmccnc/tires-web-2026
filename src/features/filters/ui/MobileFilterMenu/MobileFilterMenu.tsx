@@ -12,6 +12,7 @@ type MobileFilterMenuProps = {
   page?: string;
   className?: string;
   triggerClassName?: string;
+  t: (key: string) => string;
 };
 
 export const MobileFilterMenu = ({
@@ -19,6 +20,7 @@ export const MobileFilterMenu = ({
   page,
   className,
   triggerClassName,
+  t,
 }: MobileFilterMenuProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
@@ -26,7 +28,7 @@ export const MobileFilterMenu = ({
       side="left"
       trigger={
         <Button variant="unset" className={clsx(triggerClassName, s.btn)}>
-          <span>фильтр</span>
+          <span>{t('filter.mobile.button')}</span>
           <FilterIcon className={s.icon} />
         </Button>
       }
@@ -37,7 +39,7 @@ export const MobileFilterMenu = ({
       <div className="container">
         <div className={s.sheetContent}>
           <Text variant="h2" as={'h3'} className={s.title}>
-            фильтры
+            {t('filter.mobile.title')}
           </Text>
           <ProductFilter filterType={filterType} page={page} />
         </div>

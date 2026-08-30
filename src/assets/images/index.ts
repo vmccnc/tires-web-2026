@@ -4,4 +4,4 @@ export { default as guaranteeBanner } from './guaranteeBanner.jpg';
 export { default as supportBanner } from './supportBanner.png';
 export { default as aboutUsBanner } from './aboutUsBanner.png';
 export { default as helpBanner } from './helpBanner.png';
-export { default as team } from './team.png';
+export { default as team } from './team.jpg';

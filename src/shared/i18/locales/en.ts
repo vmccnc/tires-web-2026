@@ -76,8 +76,8 @@ export const en = {
         title: 'Quality Guarantee',
         description:
           'Official manufacturer guarantees, 30-day returns and expert support for 4x4 products.',
-        text1: 'Official manufacturer guarantee,',
-        text2: '30-day returns and support from 4x4 specialists.',
+        text1: 'Official manufacturer guarantee',
+        text2: 'and 4x4 specialist support.',
       },
 
       brandIntro: {
@@ -230,8 +230,8 @@ export const en = {
               'We know our products inside out and recommend the best solutions for off-road vehicles.',
           },
 
-          reliability: {
-            title: 'Reliability',
+          sustainability: {
+            title: 'Sustainability',
             description:
               'We support responsible consumption by offering high-quality retreaded tires.',
           },
@@ -244,16 +244,18 @@ export const en = {
     contacts: {
       title: 'Contacts',
       description:
-        'We are always here to help you choose the right tires and accessories for your 4x4',
+        'We’re always here and happy to help you choose tires, wheels, and accessories for your SUV.',
       address: 'Address',
       addressValue: 'Jerzego Badury 20, 56-416 Goszcz, Poland',
+      titleSocial: 'we’re on social media',
+      titleMap: 'find us on the map',
     },
     guarantee: {
       title: 'Guarantee',
       guaranteeBanner: {
         title: 'Quality Guarantee',
-        descriptionLine1: 'Official manufacturer guarantee,',
-        descriptionLine2: '30-day returns and support from 4x4 specialists.',
+        descriptionLine1: 'Official manufacturer guarantee',
+        descriptionLine2: 'and 4x4 specialist support.',
       },
       guaranteeBrands: {
         title: 'brand guarantees',
@@ -288,12 +290,6 @@ export const en = {
             'All products are covered by the manufacturer’s guarantee against material and manufacturing defects. The guarantee period and terms depend on the brand and are specified in the product documentation. Please contact our manager for more details.',
         },
 
-        returns: {
-          header: '30-Day Returns',
-          content:
-            'If the product does not fit or does not meet your expectations, you may return it within 30 days of purchase. The product must be unused, in its original packaging, with all factory labels intact and complete. Tires and wheels showing signs of installation or use cannot be returned.',
-        },
-
         qualityControl: {
           header: 'Quality Inspection Before Shipping',
           content:
@@ -314,7 +310,7 @@ export const en = {
       },
       supportBanner: {
         title: 'still have questions?',
-        descriptionLine1: 'We will help you with guarantee, returns,',
+        descriptionLine1: 'We will help you with guarantee',
         descriptionLine2: 'and product compatibility',
       },
     },
@@ -376,6 +372,10 @@ export const en = {
     actions: {
       submit: 'Search',
       reset: 'Reset Filters',
+    },
+    mobile: {
+      title: 'filters',
+      button: 'filter',
     },
   },
 
@@ -453,10 +453,10 @@ export const en = {
     ratingCount: 'reviews',
     sort: {
       default: 'Default',
-      lowest: 'Lowest Rated',
-      highest: 'Highest Rated',
-      newest: 'Newest First',
-      oldest: 'Oldest First',
+      lowest: 'Lowest',
+      highest: 'Highest',
+      newest: 'Newest',
+      oldest: 'Oldest',
     },
   },
 

@@ -45,7 +45,7 @@
       min-width: 167px;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: $sm) {
       width: auto;
       min-width: 145px;
     }
@@ -61,7 +61,7 @@
   .sortInner.sortInner,
   .filterTrigger {
     min-width: 167px;
-    @media (max-width: 400px) {
+    @media (max-width: $sm) {
       min-width: auto;
       font-size: 12px;
       line-height: 16px;

@@ -25,6 +25,12 @@ export const ProductCard = ({
   children,
 }: ProductCardProps) => {
   const { t } = useTranslation();
+  const stockClass =
+    +product.quantityInStock < 10
+      ? s.stockLow
+      : +product.quantityInStock <= 50
+        ? s.stockMedium
+        : s.stockHigh;
   return (
     <Link className={clsx(className, s.productCard)} to={to}>
       <AddToFavoritesBtn
@@ -47,14 +53,14 @@ export const ProductCard = ({
 
         {children}
         <div className={s.priceBlock}>
-          <span className={s.price}>{product.price} zl.</span>
+          <span className={s.price}>{product.price} zł</span>
           <div className={s.stockBlock}>
             <div className={s.stockBlockUpper}>
               <span className={s.stockBlockQuantity}>
                 {' '}
                 {product.quantityInStock} {t('cards.productCard.pieces')}
               </span>
-              <Dots className={s.stockBlockIcon} />
+              <Dots className={clsx(s.stockBlockIcon, stockClass)} />
             </div>
             <span className={s.stockBlockDescription}>
               {t('cards.productCard.stock')}

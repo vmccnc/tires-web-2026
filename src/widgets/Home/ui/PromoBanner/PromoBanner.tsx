@@ -18,7 +18,7 @@ export const PromoBanner = () => {
       contentClassName={s.promoBannerContent}
     >
       <>
-        <span>{t('pages.home.guaranteeBanner.text1')}</span>
+        <span>{t('pages.home.guaranteeBanner.text1')} </span>
         <span>{t('pages.home.guaranteeBanner.text2')}</span>
       </>
     </Banner>

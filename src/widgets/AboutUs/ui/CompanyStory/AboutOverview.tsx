@@ -1,6 +1,7 @@
 import { ABOUT_STATS, aboutImages } from '@/widgets/AboutUs/config';
 import s from './AboutOverview.module.scss';
 import { useTranslation } from '@/shared/lib/hooks';
+import { Text } from '@/shared/ui/Text';
 
 export const AboutOverview = () => {
   const { t } = useTranslation();
@@ -14,12 +15,14 @@ export const AboutOverview = () => {
         <div className={s.aboutOverviewWrapper}>
           <div className={s.aboutOverviewLeft}>
             <div className={s.aboutOverviewInfo}>
-              <h3 className={s.aboutOverviewTitle}>
+              <Text as={'h3'} variant="h3" className={s.aboutOverviewTitle}>
+                {' '}
                 {t('pages.aboutUs.aboutUsOverview.title')}
-              </h3>
-              <p className={s.aboutOverviewDescription}>
+              </Text>
+
+              <Text className={s.aboutOverviewDescription}>
                 {t('pages.aboutUs.aboutUsOverview.description')}
-              </p>
+              </Text>
             </div>
             <ul className={s.aboutOverviewGallery}>
               {aboutImages.map(({ src, alt }) => (
@@ -37,9 +40,7 @@ export const AboutOverview = () => {
             {ABOUT_STATS.map(({ value, description }) => (
               <li key={value} className={s.aboutOverviewStat}>
                 <span className={s.aboutOverviewStatValue}>{value}</span>
-                <p className={s.aboutOverviewStatDescription}>
-                  {t(description)}
-                </p>
+                <Text>{t(description)}</Text>
               </li>
             ))}
           </ul>

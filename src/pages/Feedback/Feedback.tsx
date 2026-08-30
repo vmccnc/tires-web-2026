@@ -19,6 +19,7 @@ export const Feedback = () => {
   const feedBackItems = data?.content ?? [];
 
   const totalRating = data?.averageRate;
+  const totalReviews = data?.totalElements;
   const { t } = useTranslation();
 
   return (
@@ -37,7 +38,7 @@ export const Feedback = () => {
               <div className={s.ratingStats}>
                 <FeedbackRating rate={totalRating} />
                 <span className={s.ratingCount}>
-                  {`${feedBackItems.length} ${t('feedback.ratingCount')}`}
+                  {`${totalReviews} ${t('feedback.ratingCount')}`}
                 </span>
               </div>
             </div>

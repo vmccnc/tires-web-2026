@@ -25,8 +25,8 @@ export const AboutUsBanner = ({ pageTitle }: GuaranteeBannerProps) => {
       className={s.aboutUsBanner}
     >
       <>
-        <span>{t('pages.aboutUs.aboutUsBanner.descriptionLine1')} </span>
-        <span>{t('pages.aboutUs.aboutUsBanner.descriptionLine2')} </span>
+        <span> {t('pages.aboutUs.aboutUsBanner.descriptionLine1')} </span>
+        <span>{t('pages.aboutUs.aboutUsBanner.descriptionLine2')}</span>
       </>
     </Banner>
   );

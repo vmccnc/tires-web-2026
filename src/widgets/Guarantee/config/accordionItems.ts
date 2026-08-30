@@ -10,11 +10,6 @@ export const GUARANTEE_ACCORDION_ITEMS = [
     content: 'pages.guarantee.guaranteeAccordion.manufacturerWarranty.content',
   },
   {
-    value: 'returns',
-    header: 'pages.guarantee.guaranteeAccordion.returns.header',
-    content: 'pages.guarantee.guaranteeAccordion.returns.content',
-  },
-  {
     value: 'quality-control',
     header: 'pages.guarantee.guaranteeAccordion.qualityControl.header',
     content: 'pages.guarantee.guaranteeAccordion.qualityControl.content',

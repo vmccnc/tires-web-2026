@@ -10,7 +10,7 @@ type TextVariant =
   | 'body'
   | 'bodySmall'
   | 'caption'
-  | 'smallCardProtectorText';
+  | 'ultraSmall';
 
 type TextProps = {
   children: ReactNode;

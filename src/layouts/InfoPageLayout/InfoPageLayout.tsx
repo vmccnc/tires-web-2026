@@ -6,6 +6,7 @@ import { Breadcrumbs } from '@/shared/ui/BreadCrumbs';
 import { PageStateWidget } from '@/widgets/PageState/ui/PageStateWidget';
 import { getPageState } from '@/layouts/lib';
 import { useTranslation } from '@/shared/lib/hooks';
+import { Text } from '@/shared/ui/Text';
 
 type Props = {
   title: string;
@@ -17,6 +18,7 @@ type Props = {
   headerNode?: ReactNode;
   isEmpty?: boolean;
   className?: string;
+  titleClassName?: string;
 };
 
 export const InfoPageLayout = ({
@@ -27,6 +29,7 @@ export const InfoPageLayout = ({
   isError,
   isLoading,
   className,
+  titleClassName,
   isEmpty,
   children,
 }: Props) => {
@@ -57,7 +60,13 @@ export const InfoPageLayout = ({
                 />
               </div>
               <div className={s.headerBottom}>
-                <h1 className={s.title}>{t(title)}</h1>
+                <Text
+                  as={'h1'}
+                  variant="h1"
+                  className={clsx(titleClassName, s.title)}
+                >
+                  {t(title)}
+                </Text>
                 {headerNode}
               </div>
             </section>
