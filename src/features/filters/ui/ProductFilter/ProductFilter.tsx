@@ -22,6 +22,7 @@ import { ExpandableFilter } from '@/features/filters/ui/ExpandableFilter';
 import { protectors } from '@/shared/config';
 import { useTranslation } from '@/shared/lib/hooks';
 import { useFilterFields } from '@/features/filters/hooks';
+import { hasActiveFilters } from '../../helpers';
 
 const INITIAL_VISIBLE_MANUFACTURERS = 4;
 const INITIAL_VISIBLE_PROTECTORS = 4;
@@ -60,6 +61,8 @@ export const ProductFilter = ({
   //получаем существующие поля
   const values = watch();
   //получаем от бэка данные для селектов
+
+  const isFilterActive = hasActiveFilters(values);
   const fields = useFilterFields(filterType, values);
 
   const { data, isLoading, isError } = useGetManufacturersQuery();
@@ -182,6 +185,7 @@ export const ProductFilter = ({
           variant="dark"
           className={s.resetBtn}
           onClick={handleReset}
+          disabled={!isFilterActive}
         >
           {t('filter.actions.reset')}
         </Button>

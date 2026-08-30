@@ -2,6 +2,7 @@ import { team } from '@/assets/images';
 import s from './OurTeam.module.scss';
 import { QuoteIcon } from '@/assets/icons';
 import { useTranslation } from '@/shared/lib/hooks';
+import { Text } from '@/shared/ui/Text';
 export const OurTeam = () => {
   const { t } = useTranslation();
   return (
@@ -18,7 +19,9 @@ export const OurTeam = () => {
                 <QuoteIcon key={index} className={s.quoteMark} />
               ))}
             </div>
-            <p className={s.quoteText}>{t('pages.aboutUs.ourTeam.quote')}</p>
+            <Text className={s.quoteText}>
+              {t('pages.aboutUs.ourTeam.quote')}
+            </Text>
           </blockquote>
         </div>
       </div>

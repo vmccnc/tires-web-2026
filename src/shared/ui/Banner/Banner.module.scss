@@ -5,54 +5,66 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
 
-  .bannerWrapper {
-    min-height: var(--banner-height);
-    display: flex;
-    position: relative;
+.bannerWrapper {
+  min-height: var(--banner-height);
+  display: flex;
+  position: relative;
+}
+
+.bannerContent {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 673px;
+
+  @media (max-width: $mobile) {
+    max-width: 100%;
   }
+}
 
-  .bannerContent {
-    display: flex;
-    align-self: center;
-    flex-direction: column;
-    max-width: 673px;
+.bannerTitle {
+  font-family: var(--font-unbounded);
+  text-transform: uppercase;
+  color: inherit;
+  margin-bottom: 8px;
+}
+
+.bannerDescription {
+  color: var(--color-text-secondary-muted);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+
+  @media (max-width: $mobile) {
+    display: block;
   }
+}
 
-  .bannerTitle {
-    font-family: var(--font-unbounded);
-    text-transform: uppercase;
-    color: inherit;
-    margin-bottom: 8px;
-  }
-
-  .bannerDescription {
-    font-size: clamp(14px, 1.4vw, 20px);
-    line-height: clamp(14px, 1.8vw, 26px);
-    color: var(--color-text-secondary-muted);
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 32px;
-  }
-
-  .bannerLinks {
+.bannerLinksSingle {
+  width: 413px;
+  @media (max-width: $mobile) {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-
-    @media (max-width: $mobile) {
-      display: flex;
-      flex-direction: column;
-    }
   }
+}
 
-  .bannerBreadcrumbs {
-    position: absolute;
-    top: 20px;
+.bannerLinksMultiple {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
   }
+}
 
-  .bannerImage {
-    position: absolute;
-  }
+.bannerBreadcrumbs {
+  position: absolute;
+  top: 20px;
+}
+
+.bannerImage {
+  position: absolute;
 }

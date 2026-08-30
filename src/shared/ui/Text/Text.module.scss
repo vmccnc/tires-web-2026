@@ -15,9 +15,14 @@
 }
 
 .h3 {
+  font-family: var(--font-unbounded);
   font-weight: 600;
-  font-size: 18px;
-  line-height: 1;
+  font-size: 24px;
+  line-height: 32px;
+  @media (max-width: $mobile) {
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
 
 .body {
@@ -27,10 +32,7 @@
 
   @media (max-width: $tablet) {
     font-size: 16px;
-  }
-
-  @media (max-width: $mobile) {
-    font-size: 14px;
+    letter-spacing: -0.07px;
   }
 }
 
@@ -45,7 +47,7 @@
   }
 }
 
-.smallCardProtectorText {
+.ultraSmall {
   font-size: 14px;
   line-height: 20px;
   margin-bottom: 10px;

@@ -2,7 +2,7 @@ import { GuaranteeBanner } from '@/widgets/Guarantee/ui/GuaranteeBanner/';
 import { SupportBanner } from '@/widgets/Guarantee/ui/SupportBanner';
 
 import s from './Guarantee.module.scss';
-import { ReturnProcessSection } from '@/widgets/Guarantee/ui/ReturnProcessSection/ReturnProcessSection';
+// import { ReturnProcessSection } from '@/widgets/Guarantee/ui/ReturnProcessSection/ReturnProcessSection';
 import { OurGarantees } from '@/widgets/Guarantee/ui/OurGarantees';
 import { GuaranteeBrands } from '@/widgets/Guarantee/ui/GuaranteeBrands';
 export const Guarantee = () => {
@@ -13,7 +13,7 @@ export const Guarantee = () => {
       <GuaranteeBanner pageTitle={title} />
       <OurGarantees />
       <GuaranteeBrands />
-      <ReturnProcessSection />
+      {/* <ReturnProcessSection /> */}
       <SupportBanner />
     </section>
   );

@@ -9,7 +9,7 @@ import { BurgerMenu } from '@/shared/ui/BurgerMenu';
 import { Sheet } from '@/shared/Sheet';
 import { MobileMenu } from './HeaderMobileMenu';
 import { HeaderControls } from '../HeaderControls';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 type HeaderMobileProps = {
   onSearchChange: (query: string) => void;
@@ -17,17 +17,23 @@ type HeaderMobileProps = {
 };
 
 export const HeaderMobile = ({ onSearchChange, search }: HeaderMobileProps) => {
+  const location = useLocation();
+
+  const [previousPath, setPreviousPath] = useState<string>(ROUTES.home);
   const [showSearchInput, setShowSearchInput] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const switchToSearch = () => {
+    if (location.pathname !== ROUTES.search) {
+      setPreviousPath(location.pathname);
+    }
     setShowSearchInput((prev) => !prev);
   };
 
   const hideSearch = () => {
     setShowSearchInput(false);
-    navigate(ROUTES.home);
+    navigate(previousPath);
   };
 
   return (

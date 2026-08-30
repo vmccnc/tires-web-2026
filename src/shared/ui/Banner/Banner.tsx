@@ -35,33 +35,41 @@ export const Banner = ({
 }: BannerProps) => {
   return (
     <section className={clsx(s.banner, className)}>
-      <div className={clsx('container', s.bannerWrapper)}>
-        {breadcrumbs && (
-          <Breadcrumbs className={s.bannerBreadcrumbs} items={breadcrumbs} />
-        )}
-        <div className={clsx(contentClassName, s.bannerContent)}>
-          <Text as={'h2'} variant="h2" className={s.bannerTitle}>
-            {bannerTitle}
-          </Text>
-          <p className={s.bannerDescription}>{children}</p>
-          {links && (
-            <div className={s.bannerLinks}>
-              {links.map(({ to, linkName, btnVariant }) => (
-                <Button
-                  key={to}
-                  {...(btnVariant && { variant: btnVariant })}
-                  asChild
-                >
-                  <Link to={to} className={s.bannerLink}>
-                    {linkName}
-                  </Link>
-                </Button>
-              ))}
-            </div>
+      <div className="container">
+        <div className={s.bannerWrapper}>
+          {breadcrumbs && (
+            <Breadcrumbs className={s.bannerBreadcrumbs} items={breadcrumbs} />
           )}
-          {image && (
-            <div className={clsx(s.bannerImage, imageClassName)}>{image}</div>
-          )}
+          <div className={clsx(contentClassName, s.bannerContent)}>
+            <Text as={'h2'} variant="h2" className={s.bannerTitle}>
+              {bannerTitle}
+            </Text>
+            <Text className={s.bannerDescription}>{children}</Text>
+            {links && (
+              <div
+                className={clsx(
+                  links.length === 1
+                    ? s.bannerLinksSingle
+                    : s.bannerLinksMultiple,
+                )}
+              >
+                {links.map(({ to, linkName, btnVariant }) => (
+                  <Button
+                    key={to}
+                    {...(btnVariant && { variant: btnVariant })}
+                    asChild
+                  >
+                    <Link to={to} className={s.bannerLink}>
+                      {linkName}
+                    </Link>
+                  </Button>
+                ))}
+              </div>
+            )}
+            {image && (
+              <div className={clsx(s.bannerImage, imageClassName)}>{image}</div>
+            )}
+          </div>
         </div>
       </div>
     </section>

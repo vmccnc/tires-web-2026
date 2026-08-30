@@ -76,7 +76,7 @@ export const ProductDetailsCard = ({
             )}
 
             <Text variant="h2" className={s.cardPrice}>
-              {product.price} <span>zł.</span>
+              {product.price} <span>zł</span>
             </Text>
           </div>
         </div>

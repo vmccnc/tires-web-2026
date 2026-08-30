@@ -14,8 +14,8 @@ export const ourValues = [
     iconSize: { width: 45, height: 38 },
   },
   {
-    title: 'pages.aboutUs.ourValues.items.reliability.title',
-    description: 'pages.aboutUs.ourValues.items.reliability.description',
+    title: 'pages.aboutUs.ourValues.items.sustainability.title',
+    description: 'pages.aboutUs.ourValues.items.sustainability.description',
     Icon: Leaf,
     iconSize: { width: 35, height: 35 },
   },

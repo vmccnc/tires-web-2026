@@ -21,7 +21,7 @@ export const TireCard = ({ tire, className }: Props) => {
       title={cardTitle}
       to={`${ROUTES.tires}/${tire.id}`}
     >
-      <Text variant="smallCardProtectorText">{tire.protector ?? ''}</Text>
+      <Text variant="ultraSmall">{tire.protector ?? ''}</Text>
     </ProductCard>
   );
 };

@@ -3,8 +3,18 @@
   width: 100%;
   justify-content: space-between;
   margin-top: 16px;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
   .feedBackSort {
     width: auto;
+
+    @media (max-width: $mobile) {
+      width: fit-content;
+      align-self: flex-end;
+      margin: 60px 0 16px;
+    }
   }
 }
 
@@ -18,8 +28,8 @@
   }
   .ratingTotal {
     font-family: var(--font-unbounded);
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 24px;
     text-transform: uppercase;
   }
 

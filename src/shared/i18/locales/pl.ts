@@ -3,7 +3,7 @@ export const pl = {
     topMenu: {
       aboutUs: 'O nas',
       contacts: 'Kontakt',
-      guarantee: 'Gwarancja',
+      guarantee: 'Gwarancje',
       news: 'Aktualności',
       feedback: 'Opinie',
     },
@@ -26,7 +26,7 @@ export const pl = {
       aboutUs: 'O nas',
       contacts: 'Kontakt',
       feedback: 'Opinie',
-      guarantee: 'Gwarancja',
+      guarantee: 'Gwarancje',
       cookiePreferences: 'Ustawienia plików cookie',
       privacyPolicy: 'Polityka prywatności',
       terms: 'Warunki korzystania',
@@ -74,8 +74,8 @@ export const pl = {
         title: 'Gwarancja jakości',
         description:
           'Oficjalna gwarancja producenta, 30 dni na zwrot oraz fachowe wsparcie w zakresie produktów do samochodów 4x4.',
-        text1: 'Oficjalna gwarancja producenta,',
-        text2: '30 dni na zwrot oraz wsparcie specjalistów 4x4.',
+        text1: 'Oficjalna gwarancja producentów',
+        text2: 'i wsparcie specjalistów 4x4.',
       },
 
       brandIntro: {
@@ -233,8 +233,8 @@ export const pl = {
               'Doskonale znamy nasze produkty i proponujemy optymalne rozwiązania dla samochodów terenowych.',
           },
 
-          reliability: {
-            title: 'Niezawodność',
+          sustainability: {
+            title: 'Ekologiczność',
             description:
               'Wspieramy odpowiedzialną konsumpcję, oferując wysokiej jakości opony bieżnikowane.',
           },
@@ -247,16 +247,18 @@ export const pl = {
     contacts: {
       title: 'Kontakt',
       description:
-        'Zawsze jesteśmy do dyspozycji i chętnie pomożemy w doborze opon oraz akcesoriów do Twojego samochodu 4x4',
+        'Jesteśmy zawsze do dyspozycji i chętnie pomożemy w doborze opon, felg i akcesoriów do Twojego SUV-a.',
       address: 'Adres',
       addressValue: 'Jerzego Badury 20, 56-416 Goszcz, Polska',
+      titleSocial: 'jesteśmy w mediach społecznościowych',
+      titleMap: 'jesteśmy na mapie',
     },
     guarantee: {
       title: 'Gwarancja',
       guaranteeBanner: {
         title: 'Gwarancja jakości',
-        descriptionLine1: 'Oficjalna gwarancja producentów,',
-        descriptionLine2: '30 dni na zwrot oraz wsparcie specjalistów 4x4.',
+        descriptionLine1: 'Oficjalna gwarancja producentów',
+        descriptionLine2: 'i wsparcie specjalistów 4x4',
       },
       guaranteeBrands: {
         title: 'gwarancje producentów',
@@ -291,12 +293,6 @@ export const pl = {
             'Wszystkie produkty objęte są gwarancją producenta na wady materiałowe i produkcyjne. Okres oraz warunki gwarancji zależą od marki i są określone w dokumentacji produktu. Aby uzyskać więcej informacji, skontaktuj się z naszym doradcą.',
         },
 
-        returns: {
-          header: '30 dni na zwrot',
-          content:
-            'Jeśli produkt nie pasuje rozmiarem lub specyfikacją, możesz go zwrócić w ciągu 30 dni od zakupu. Produkt musi być nieużywany, w oryginalnym opakowaniu, z zachowanymi etykietami producenta i kompletnym wyposażeniem. Opony i felgi noszące ślady montażu lub użytkowania nie podlegają zwrotowi.',
-        },
-
         qualityControl: {
           header: 'Kontrola jakości przed wysyłką',
           content:
@@ -317,7 +313,7 @@ export const pl = {
       },
       supportBanner: {
         title: 'masz pytania?',
-        descriptionLine1: 'Pomożemy w kwestii gwarancji, zwrotów',
+        descriptionLine1: 'Pomożemy w kwestii gwarancji',
         descriptionLine2: 'i kompatybilności produktów',
       },
     },
@@ -380,6 +376,10 @@ export const pl = {
     actions: {
       submit: 'Znajdź',
       reset: 'Wyczyść filtry',
+    },
+    mobile: {
+      title: 'filtry',
+      button: 'filtr',
     },
   },
   cards: {
@@ -456,8 +456,8 @@ export const pl = {
     ratingCount: 'opinii',
     sort: {
       default: 'Domyślnie',
-      lowest: 'Najniżej oceniane',
-      highest: 'Najwyżej oceniane',
+      lowest: 'Najniżej',
+      highest: 'Najwyżej',
       newest: 'Najnowsze',
       oldest: 'Najstarsze',
     },

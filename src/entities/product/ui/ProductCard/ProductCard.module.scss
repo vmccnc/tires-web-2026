@@ -72,6 +72,7 @@
     flex-direction: column;
     color: var(--color-text-primary-faint);
   }
+
   .stockBlockUpper {
     display: flex;
     width: 100%;
@@ -95,9 +96,33 @@
       line-height: 10px;
     }
   }
+
   .stockBlockIcon {
     width: 32px;
     height: 8px;
     color: var(--color-icon-primary);
+
+    rect {
+      fill: var(--color-border-secondary-faint);
+    }
+  }
+
+  .stockLow {
+    rect:nth-child(3) {
+      fill: var(--color-error);
+    }
+  }
+
+  .stockMedium {
+    rect:nth-child(2),
+    rect:nth-child(3) {
+      fill: var(--color-warning);
+    }
+  }
+
+  .stockHigh {
+    rect {
+      fill: var(--color-success);
+    }
   }
 }

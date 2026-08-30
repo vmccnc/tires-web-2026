@@ -1,16 +1,61 @@
 .guaranteeBrands {
-  padding: 100px 0 0;
+  padding: 100px 0 100px;
+
+  @media (max-width: $tablet) {
+    padding: 40px 0 40px;
+  }
+
+  .guaranteeBrandsText {
+    font-family: var(--font-unbounded);
+    font-weight: 600;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (max-width: $mobile) {
+      line-height: 20px;
+    }
+  }
+}
+
+.guaranteeBrandsViewport {
+  @media (max-width: $tablet) {
+    overflow: hidden;
+  }
 }
 
 .guaranteeBrandsList {
   display: flex;
-  gap: 50px;
+  gap: clamp(8px, 4vw, 50px);
+  > * {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  @media (max-width: $tablet) {
+    > * {
+      flex: 0 0 clamp(25%, calc(46% - 24vw), 31%);
+    }
+  }
+
+  @media (max-width: $mobile) {
+    > * {
+      flex: 0 0 28%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    > * {
+      flex: 0 0 41%;
+    }
+  }
 }
 
 .guaranteeBrandsItem {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  padding: 4px;
 }
 
 .guaranteeBrandsIcon {
@@ -21,13 +66,4 @@
     width: 100%;
     height: 100%;
   }
-}
-
-.guaranteeBrandsText {
-  font-family: var(--font-unbounded);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 40px;
-  text-align: center;
-  text-transform: uppercase;
 }

@@ -84,6 +84,7 @@ export const ProductPageLayout = ({
                     triggerClassName={s.filterTrigger}
                     filterType={filterType}
                     page={page}
+                    t={t}
                   />
                 )}
 

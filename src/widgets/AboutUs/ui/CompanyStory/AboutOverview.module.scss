@@ -1,6 +1,11 @@
 .aboutOverview {
   --overview-gap: clamp(48px, 7.8vw, 112px);
   padding: 100px 0 0;
+
+  @media (max-width: $tablet) {
+    --overview-gap: 40px;
+    padding: 40px 0 0;
+  }
 }
 
 .aboutOverviewWrapper {
@@ -8,34 +13,53 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--overview-gap);
+
   &::after {
     content: '';
     position: absolute;
+
     top: 0;
     bottom: 0;
-    left: 50%;
+    left: calc(50% - 0.5px);
+
     width: 1px;
-    transform: translateX(-50%);
-    background: linear-gradient(180deg, #fff 0%, #888 49.52%, #fff 100%);
+
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      #888 49.52%,
+      transparent 100%
+    );
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    display: flex;
+    flex-direction: column;
   }
 }
 
 .aboutOverviewInfo {
-  margin-bottom: 93px;
+  margin-bottom: 80px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 16px;
+  }
 }
 
 .aboutOverviewTitle {
   font-family: var(--font-unbounded);
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 28px;
+  font-weight: 600;
+  vertical-align: bottom;
   text-transform: uppercase;
   margin-bottom: 12px;
-}
-
-.aboutOverviewDescription {
-  font-size: 20px;
-  line-height: 1;
 }
 
 .aboutOverviewStats {
@@ -46,15 +70,54 @@
   gap: var(--overview-gap);
   height: 100%;
 
+  @media (max-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &::before {
+    content: '';
+    display: none;
+    position: absolute;
+
+    @media (max-width: $tablet) {
+      display: block;
+
+      top: calc(var(--overview-gap) / -2);
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        #888 49.52%,
+        transparent 100%
+      );
+    }
+  }
+
   &::after {
     content: '';
     position: absolute;
+
     top: 0;
     bottom: 0;
-    left: 50%;
+    left: calc(50% - 0.5px);
+
     width: 1px;
-    transform: translateX(-50%);
-    background: linear-gradient(180deg, #fff 0%, #888 49.52%, #fff 100%);
+
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      #888 49.52%,
+      transparent 100%
+    );
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
   }
 }
 
@@ -62,20 +125,41 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  position: relative;
+  width: 100%;
+  @media (max-width: $tablet) {
+    gap: 0;
+  }
+  &:first-child {
+    @media (max-width: $tablet) {
+      &::after {
+        content: '';
+        position: absolute;
+
+        left: 0;
+        bottom: -20px;
+
+        width: 100%;
+        height: 1px;
+
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          #888 49.52%,
+          transparent 100%
+        );
+      }
+    }
+  }
 }
 
 .aboutOverviewStatValue {
   font-family: var(--font-unbounded);
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 59px;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
-}
-
-.aboutOverviewStatDescription {
-  font-size: 20px;
-  line-height: 100%;
 }
 
 .aboutOverviewGallery {
@@ -87,6 +171,10 @@
 .aboutOverviewGalleryItem {
   height: 100px;
   aspect-ratio: 1;
+
+  @media (max-width: $tablet) {
+    height: clamp(60px, 12.7vw, 130px);
+  }
 }
 
 .aboutOverviewGalleryImage {
