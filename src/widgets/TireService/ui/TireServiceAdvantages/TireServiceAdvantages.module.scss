@@ -1,0 +1,68 @@
+.serviceAdvantages {
+  padding: 0 0 100px;
+
+  @media (max-width: $tablet) {
+    padding-bottom: 60px;
+  }
+
+  .serviceAdvantagesTitle {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .advantageCardTitle {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+.serviceAdvantagesViewport {
+  @media (max-width: $tablet) {
+    overflow: hidden;
+  }
+}
+
+.serviceAdvantagesList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+
+  @media (max-width: $tablet) {
+    display: flex;
+    gap: 12px;
+    > * {
+      flex: 0 0 calc((100% - 48px) / 3.15);
+    }
+  }
+
+  @media (max-width: $mobile) {
+    > * {
+      flex: 0 0 calc((100% - 32px) / 2.25);
+    }
+  }
+
+  @media (max-width: 550px) {
+    > * {
+      flex: 0 0 calc((100% - 12px) / 1.5);
+    }
+  }
+
+  @media (max-width: 450px) {
+    > * {
+      flex: 0 0 calc((100% - 12px) / 1.15);
+    }
+  }
+}
+
+.advantageCard {
+  background-color: var(--color-background-primary-subtle);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.07px;
+  height: 100%;
+  min-height: clamp(220px, 20vw, 300px);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

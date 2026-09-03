@@ -12,6 +12,7 @@ export const pl = {
       tires: 'Opony 4x4',
       wheels: 'Felgi',
       wheelSpacers: 'Dystanse',
+      tireService: 'Serwis opon',
     },
 
     search: {
@@ -189,6 +190,81 @@ export const pl = {
     wheelSpacers: {
       title: 'Dystanse',
     },
+    tireService: {
+      title: 'Serwis opon',
+      tireServiceBanner: {
+        title: 'Serwis opon',
+        descriptionLine1: 'Profesjonalna wymiana opon, wyważanie i serwis kół.',
+        descriptionLine2: 'Twoje opony są w rękach ekspertów!',
+      },
+
+      tireServiceServices: {
+        title: 'Usługi',
+        titlePrice: 'Cennik',
+        note: 'Ceny podane w cenniku są orientacyjne. Ostateczny koszt zależy od typu pojazdu, średnicy kół oraz stopnia skomplikowania prac. Dokładną cenę podamy podczas umawiania wizyty — przed rozpoczęciem jakichkolwiek prac. Jeśli masz pytania, chętnie odpowiemy na nie telefonicznie.',
+        seasonalTireChange: {
+          title: 'Sezonowa wymiana opon',
+          description:
+            'Sezonowa wymiana opon. Profesjonalny montaż i demontaż opon każdego typu. Ostrożna praca z felgami oraz prawidłowy montaż z uwzględnieniem kierunku bieżnika.',
+        },
+
+        wheelBalancing: {
+          title: 'Wyważanie kół',
+          description:
+            'Precyzyjne wyważanie kół na nowoczesnym urządzeniu. Eliminujemy drgania, zapewniamy równomierne zużycie opon i komfortową jazdę przy każdej prędkości.',
+        },
+
+        tireRepair: {
+          title: 'Naprawa opon (wulkanizacja)',
+          description:
+            'Profesjonalna naprawa przebić, przecięć i innych uszkodzeń. Używamy profesjonalnych materiałów, przywracając szczelność i wydłużając żywotność opony.',
+        },
+
+        wheelRepair: {
+          title: 'Naprawa i prostowanie felg',
+          description:
+            'Usuwamy odkształcenia felg stalowych i aluminiowych. Przywracamy ich geometrię oraz usuwamy bicie i uszkodzenia powstałe wskutek wjechania w dziury lub uderzenia w krawężnik.',
+        },
+
+        seasonalStorage: {
+          title: 'Sezonowe przechowywanie',
+          description:
+            'Bezpieczne przechowywanie kompletu opon w czystym i suchym pomieszczeniu. Odpowiednie warunki przechowywania wydłużają żywotność opon.',
+        },
+
+        additionalServices: {
+          title: 'Usługi dodatkowe',
+          description:
+            'Kolcowanie opon, czernienie opon oraz inne usługi dodatkowe.',
+        },
+      },
+      tireServiceAdvantages: {
+        title: {
+          title1: 'nasze',
+          title2: 'zalety',
+        },
+        advantages: {
+          modernEquipment: {
+            title: 'Nowoczesny sprzęt',
+            description:
+              'Pracujemy na profesjonalnym sprzęcie, co gwarantuje precyzję i bezpieczeństwo.',
+          },
+          experiencedSpecialists: {
+            title: 'Doświadczeni specjaliści',
+            description:
+              'Nasi specjaliści mają wieloletnie doświadczenie w pracy z oponami i felgami o każdym stopniu skomplikowania.',
+          },
+          transparentPrices: {
+            title: 'Przejrzyste ceny',
+            description: 'Koszt usług jest znany przed rozpoczęciem prac.',
+          },
+          qualityGuarantee: {
+            title: 'Gwarancja jakości',
+            description: 'Udzielamy gwarancji na wszystkie rodzaje prac.',
+          },
+        },
+      },
+    },
     aboutUs: {
       title: 'O nas',
       aboutUsBanner: {
@@ -246,10 +322,13 @@ export const pl = {
     },
     contacts: {
       title: 'Kontakt',
+      titleComponent: 'nasze kontakty',
       description:
         'Jesteśmy zawsze do dyspozycji i chętnie pomożemy w doborze opon, felg i akcesoriów do Twojego SUV-a.',
       address: 'Adres',
       addressValue: 'Jerzego Badury 20, 56-416 Goszcz, Polska',
+      workingHours: 'Godziny pracy: pon.–pt. 8:00–20:00',
+      bookService: 'Umów się na serwis',
       titleSocial: 'jesteśmy w mediach społecznościowych',
       titleMap: 'jesteśmy na mapie',
     },

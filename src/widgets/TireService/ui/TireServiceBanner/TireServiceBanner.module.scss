@@ -1,0 +1,17 @@
+.tireServiceBanner {
+  background-image: url('/src/assets/images/tireServiceBanner.jpg');
+  background-color: var(--color-background-secondary);
+  color: var(--color-text-secondary);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-overlay-dark);
+  }
+}
+
+.tireServiceBannerContent {
+  position: relative;
+  z-index: 1;
+}

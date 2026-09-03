@@ -39,6 +39,7 @@ export { default as LocationIcon } from './Location.svg?react';
 export { default as LongArrow } from './LongArrow.svg?react';
 export { default as Email } from './Email.svg?react';
 export { default as Phone } from './Phone.svg?react';
+export { default as Clock } from './Clock.svg?react';
 export { default as LoaderIcon } from './LoaderIcon.svg?react';
 export { default as QuoteIcon } from './Quote.svg?react';
 export { default as ShieldIcon } from './Shield.svg?react';
@@ -52,3 +53,11 @@ export { default as TractionBrand } from './TractionBrand.svg?react';
 export { default as DakarBrand } from './DakarBrand.svg?react';
 export { default as CSTBrand } from './CSTBrand.svg?react';
 export { default as CEATBrand } from './CEATBrand.svg?react';
+
+//Tire service icons
+export { default as TireServiceIcon1 } from './tireService/item1.svg?react';
+export { default as TireServiceIcon2 } from './tireService/item2.svg?react';
+export { default as TireServiceIcon3 } from './tireService/item3.svg?react';
+export { default as TireServiceIcon4 } from './tireService/item4.svg?react';
+export { default as TireServiceIcon5 } from './tireService/item5.svg?react';
+export { default as TireServiceIcon6 } from './tireService/item6.svg?react';

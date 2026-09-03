@@ -6,7 +6,7 @@ import { FILTER_VALUES } from '@/features/filters/config';
 
 import s from './ProductFilter.module.scss';
 import clsx from 'clsx';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { Button } from '@/shared/ui/Button';
 import { Select } from '@/shared/ui/Select';
 import { useSearchParams } from 'react-router-dom';
@@ -47,16 +47,15 @@ export const ProductFilter = ({
     ...getFormValuesFromSearchParams(initialFields, searchParams),
     priceFrom: searchParams.get('priceFrom') ?? '',
     priceTo: searchParams.get('priceTo') ?? '',
-    inStock: false,
+    inStock: searchParams.get('inStock') === 'true',
     manufacturer: searchParams.getAll('manufacturer'),
     protector: searchParams.getAll('protector'),
   };
 
-  const { register, watch, reset, setValue } = useForm<ProductFilterFormValues>(
-    {
+  const { register, watch, reset, control, setValue } =
+    useForm<ProductFilterFormValues>({
       defaultValues,
-    },
-  );
+    });
 
   //получаем существующие поля
   const values = watch();
@@ -84,6 +83,9 @@ export const ProductFilter = ({
   const [visibleProtectorCount, setVisibleProtectorCount] = useState(
     INITIAL_VISIBLE_PROTECTORS,
   );
+
+  const test1 = getFormValuesFromSearchParams(initialFields, searchParams);
+  console.log(test1, 'testFields');
 
   useEffect(() => {
     let timeoutId: ReturnType<typeof setTimeout>;
@@ -130,17 +132,23 @@ export const ProductFilter = ({
           {...register('inStock')}
         />
         <div className={s.filterFields}>
-          {fields.map((field) => (
-            <Select
-              key={field.name}
-              options={field.options!}
-              placeholder={t(field.placeholder)}
-              disabled={field.disabled}
-              wrapperClassName={s.productFilterSelectWrapper}
-              className={s.productFilterSelect}
-              iconClassName={s.productFilterSelectIcon}
-              defaultValue=""
-              {...register(field.name)}
+          {fields.map((filterField) => (
+            <Controller
+              key={filterField.name}
+              name={filterField.name}
+              control={control}
+              render={({ field }) => (
+                <Select
+                  {...field}
+                  options={filterField.options!}
+                  placeholder={t(filterField.placeholder)}
+                  disabled={filterField.disabled}
+                  wrapperClassName={s.productFilterSelectWrapper}
+                  className={s.productFilterSelect}
+                  iconClassName={s.productFilterSelectIcon}
+                  value={field.value as string}
+                />
+              )}
             />
           ))}
         </div>

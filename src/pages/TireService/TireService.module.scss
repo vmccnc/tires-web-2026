@@ -1,0 +1,8 @@
+.tireService {
+  background-color: var(--color-background-primary);
+  padding: 0 0 100px;
+
+  @media (max-width: $tablet) {
+    padding-bottom: 60px;
+  }
+}

@@ -21,6 +21,7 @@ import { WheelDetails } from '@/pages/WheelDetails';
 import { CookiePreferences } from '@/pages/CookiePreferences/CookiePreferences';
 import { PrivacyPolicy } from '@/pages/PrivacyPolicy/PrivacyPolicy';
 import { Terms } from '@/pages/Terms';
+import { TireService } from '@/pages/TireService/TireService';
 
 export const appRoutes = [
   {
@@ -74,6 +75,10 @@ export const appRoutes = [
   {
     path: ROUTES.wheelSpacer,
     component: WheelSpacerDetails,
+  },
+  {
+    path: ROUTES.tireService,
+    component: TireService,
   },
   {
     path: ROUTES.search,
