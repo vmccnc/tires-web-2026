@@ -14,6 +14,8 @@ type AccordionProps = {
   className?: string;
   itemClassName?: string;
   defaultValue?: string;
+  activeItem?: string;
+  onActiveItemChange?: (value: string) => void;
   contentClassName?: string;
   triggerClassName?: string;
 };
@@ -24,6 +26,8 @@ export const Accordion = ({
   itemClassName,
   triggerClassName,
   defaultValue,
+  activeItem,
+  onActiveItemChange,
   contentClassName,
 }: AccordionProps) => {
   return (
@@ -32,11 +36,14 @@ export const Accordion = ({
       collapsible
       className={className}
       defaultValue={defaultValue}
+      value={activeItem}
+      onValueChange={onActiveItemChange}
     >
       {items.map((item) => (
         <RadixAccordion.Item
           key={item.value}
           value={item.value}
+          id={item.value}
           className={itemClassName}
         >
           <RadixAccordion.Header>

@@ -44,6 +44,10 @@ export const headerRoutes = {
       labelKey: 'header.catalog.wheelSpacers',
       path: ROUTES.wheelSpacers,
     },
+    {
+      labelKey: 'header.catalog.tireService',
+      path: ROUTES.tireService,
+    },
   ],
 
   controls: [

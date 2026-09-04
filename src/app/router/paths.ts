@@ -12,6 +12,7 @@ export const ROUTES = {
   wheel: '/wheels/:id',
   wheelSpacers: '/wheel-spacers',
   wheelSpacer: '/wheel-spacers/:id',
+  tireService: '/tire-service',
   searchEmpty: '/products/title',
   search: '/products/title/:title',
   profile: '/profile',

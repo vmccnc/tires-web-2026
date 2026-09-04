@@ -1,71 +1,15 @@
 import { InfoPageLayout } from '@/layouts/InfoPageLayout';
 import s from './Contacts.module.scss';
-import { LocationIcon, LongArrow } from '@/assets/icons';
-import { Socials } from '@/shared/ui/Socials';
-import { socials } from './contactsSocials';
-import { contactsInfo } from './contactInfo';
-import { useTranslation } from '@/shared/lib/hooks';
+import { ContactsBlock } from '@/widgets/Contacts';
 
 export const Contacts = () => {
-  const { t } = useTranslation();
   return (
     <InfoPageLayout
       title="pages.contacts.title"
-      className={s.contacts}
-      titleClassName={s.contactsTitle}
+      className={s.contactsPage}
+      titleClassName={s.contactsPageTitle}
     >
-      <div className={s.contactsWrapper}>
-        <div className={s.contactsContent}>
-          <div className={s.contactsTop}>
-            <p className={s.contactsDescription}>
-              {t('pages.contacts.description')}
-            </p>
-            <div className={s.contactsInfo}>
-              {contactsInfo.map(({ Icon, value, href }) => (
-                <a key={href} href={href} className={s.contactsInfoItem}>
-                  <span className={s.contactsInfoIconWrapper}>
-                    <Icon className={s.contactsInfoIcon} />
-                  </span>
-                  <span>{value}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className={s.contactsBottom}>
-            <h3 className={s.smallTitle}>{t('pages.contacts.titleSocial')}</h3>
-            <Socials
-              items={socials}
-              className={s.contactsSocials}
-              linkClassName={s.contactsSocialLink}
-              showLabel
-            >
-              {() => (
-                <>
-                  <LongArrow className={s.contactsSocialsArrow} />
-                </>
-              )}
-            </Socials>
-          </div>
-        </div>
-        <div className={s.contactsMapWrapper}>
-          <h3 className={s.smallTitle}>{t('pages.contacts.titleMap')}</h3>
-          <iframe
-            className={s.contactsMap}
-            src="https://maps.google.com/maps?q=Jerzego%20Badury%2020,%2056-416%20Goszcz,%20Poland&z=16&output=embed"
-            title="Mapa lokalizacji INSA Turbo"
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-          <div className={s.contactsAddress}>
-            <LocationIcon className={s.contactsIcon} />
-            <span>
-              <strong> {t('pages.contacts.address')}</strong>{' '}
-              {t('pages.contacts.addressValue')}
-            </span>
-          </div>
-        </div>
-      </div>
+      <ContactsBlock />
     </InfoPageLayout>
   );
 };

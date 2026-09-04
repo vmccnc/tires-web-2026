@@ -12,6 +12,7 @@ export const en = {
       tires: '4x4 Tires',
       wheels: 'Wheels',
       wheelSpacers: 'Wheel Spacers',
+      tireService: 'Tire Service',
     },
 
     search: {
@@ -188,6 +189,84 @@ export const en = {
     wheelSpacers: {
       title: 'Wheel Spacers',
     },
+    tireService: {
+      title: 'Tire Service',
+      tireServiceBanner: {
+        title: 'Tire Services',
+        descriptionLine1:
+          'Professional tire fitting, wheel balancing, and wheel maintenance.',
+        descriptionLine2: 'Your tires are in the hands of experts!',
+      },
+
+      tireServiceServices: {
+        title: 'Services',
+        titlePrice: 'Price List',
+        note: 'The prices listed are approximate. The final cost depends on the type of vehicle, wheel diameter, and complexity of the work. We will confirm the exact cost when you book the service — before any work begins. If you have any questions, we will be happy to answer them by phone.',
+        seasonalTireChange: {
+          title: 'Seasonal Tire Change',
+          description:
+            'Seasonal tire change. Professional installation and removal of all types of tires. Careful handling of wheels and correct installation according to the tire tread direction.',
+        },
+
+        wheelBalancing: {
+          title: 'Wheel Balancing',
+          description:
+            'Precise wheel balancing using modern equipment. We eliminate vibrations, ensure even tire wear, and provide a comfortable ride at any speed.',
+        },
+
+        tireRepair: {
+          title: 'Tire Repair (Vulcanization)',
+          description:
+            'Professional repair of punctures, cuts, and other damage. We use professional materials to restore airtightness and extend the life of your tire.',
+        },
+
+        wheelRepair: {
+          title: 'Wheel Repair and Straightening',
+          description:
+            'We repair deformations of steel and alloy wheels, restore their geometry, and eliminate runout and damage caused by potholes and curbs.',
+        },
+
+        seasonalStorage: {
+          title: 'Seasonal Storage',
+          description:
+            'Reliable storage of your tire set in a clean, dry facility. Proper storage conditions help extend the service life of your tires.',
+        },
+
+        additionalServices: {
+          title: 'Additional Services',
+          description:
+            'Tire studding, tire blackening, and other related services.',
+        },
+      },
+
+      tireServiceAdvantages: {
+        title: {
+          title1: 'our',
+          title2: 'advantages',
+        },
+        advantages: {
+          modernEquipment: {
+            title: 'Modern equipment',
+            description:
+              'We use professional equipment to ensure precision and safety.',
+          },
+          experiencedSpecialists: {
+            title: 'Experienced specialists',
+            description:
+              'Our specialists have many years of experience working with tires and wheels of any complexity.',
+          },
+          transparentPrices: {
+            title: 'Transparent pricing',
+            description:
+              'The cost of services is known before the work begins.',
+          },
+          qualityGuarantee: {
+            title: 'Quality guarantee',
+            description: 'We provide a guarantee for all types of work.',
+          },
+        },
+      },
+    },
     aboutUs: {
       title: 'About us',
       aboutUsBanner: {
@@ -243,10 +322,13 @@ export const en = {
     },
     contacts: {
       title: 'Contacts',
+      titleComponent: 'our contacts',
       description:
         'We’re always here and happy to help you choose tires, wheels, and accessories for your SUV.',
       address: 'Address',
       addressValue: 'Jerzego Badury 20, 56-416 Goszcz, Poland',
+      workingHours: 'Working hours: Mon–Fri 8:00 AM to 8:00 PM',
+      bookService: 'Book a service',
       titleSocial: 'we’re on social media',
       titleMap: 'find us on the map',
     },

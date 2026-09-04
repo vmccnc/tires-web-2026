@@ -70,9 +70,7 @@ export const InfoPageLayout = ({
                 {headerNode}
               </div>
             </section>
-
-            <div className={s.content}>{children}</div>
-
+            {children}
             {totalPages > 1 && (
               <Pagination
                 totalPages={totalPages}
