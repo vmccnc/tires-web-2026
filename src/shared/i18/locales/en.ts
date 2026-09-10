@@ -181,13 +181,18 @@ export const en = {
       },
     },
     tires: {
-      title: 'Tires',
+      title: 'Tires 4X4',
     },
     wheels: {
       title: 'Wheels',
     },
     wheelSpacers: {
       title: 'Wheel Spacers',
+    },
+    search: {
+      title: 'Search Results',
+      enterQuery: 'Enter a search query',
+      noResults: 'No results found',
     },
     tireService: {
       title: 'Tire Service',
@@ -324,7 +329,7 @@ export const en = {
       title: 'Contacts',
       titleComponent: 'our contacts',
       description:
-        'We’re always here and happy to help you choose tires, wheels, and accessories for your SUV.',
+        'We’re always here and happy to help you choose tires, wheels, and wheel spacers for your SUV.',
       address: 'Address',
       addressValue: 'Jerzego Badury 20, 56-416 Goszcz, Poland',
       workingHours: 'Working hours: Mon–Fri 8:00 AM to 8:00 PM',
@@ -392,7 +397,7 @@ export const en = {
       },
       supportBanner: {
         title: 'still have questions?',
-        descriptionLine1: 'We will help you with guarantee',
+        descriptionLine1: 'We will help you with guarantee ',
         descriptionLine2: 'and product compatibility',
       },
     },
@@ -452,6 +457,7 @@ export const en = {
     },
 
     actions: {
+      show: 'Show',
       submit: 'Search',
       reset: 'Reset Filters',
     },

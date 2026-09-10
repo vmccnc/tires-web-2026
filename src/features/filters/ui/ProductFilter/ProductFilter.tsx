@@ -2,7 +2,7 @@ import {
   type ProductFilterFormValues,
   type ProductFilterType,
 } from '@/features/filters/model';
-import { FILTER_VALUES } from '@/features/filters/config';
+import { FILTER_VALUES, MAX_PRICE, MIN_PRICE } from '@/features/filters/config';
 
 import s from './ProductFilter.module.scss';
 import clsx from 'clsx';
@@ -31,12 +31,16 @@ export type ProductFilterProps = {
   className?: string;
   filterType: ProductFilterType;
   page?: string;
+  isMobile?: boolean;
+  closeMobileFilter?: () => void;
 };
 
 export const ProductFilter = ({
   className,
   filterType,
+  isMobile = false,
   page,
+  closeMobileFilter,
 }: ProductFilterProps) => {
   const initialFields = FILTER_VALUES[filterType].fields;
 
@@ -45,8 +49,8 @@ export const ProductFilter = ({
 
   const defaultValues = {
     ...getFormValuesFromSearchParams(initialFields, searchParams),
-    priceFrom: searchParams.get('priceFrom') ?? '',
-    priceTo: searchParams.get('priceTo') ?? '',
+    priceFrom: searchParams.get('priceFrom') ?? String(MIN_PRICE),
+    priceTo: searchParams.get('priceTo') ?? String(MAX_PRICE),
     inStock: searchParams.get('inStock') === 'true',
     manufacturer: searchParams.getAll('manufacturer'),
     protector: searchParams.getAll('protector'),
@@ -84,9 +88,6 @@ export const ProductFilter = ({
     INITIAL_VISIBLE_PROTECTORS,
   );
 
-  const test1 = getFormValuesFromSearchParams(initialFields, searchParams);
-  console.log(test1, 'testFields');
-
   useEffect(() => {
     let timeoutId: ReturnType<typeof setTimeout>;
 
@@ -111,8 +112,8 @@ export const ProductFilter = ({
   const handleReset = () => {
     reset({
       ...getFormValuesFromSearchParams(initialFields, new URLSearchParams()),
-      priceFrom: '',
-      priceTo: '',
+      priceFrom: String(MIN_PRICE),
+      priceTo: String(MAX_PRICE),
       inStock: false,
       manufacturer: [],
       protector: [],
@@ -147,6 +148,17 @@ export const ProductFilter = ({
                   className={s.productFilterSelect}
                   iconClassName={s.productFilterSelectIcon}
                   value={field.value as string}
+                  onChange={(value) => {
+                    field.onChange(value);
+
+                    const index = initialFields.findIndex(
+                      (item) => item.name === filterField.name,
+                    );
+
+                    initialFields.slice(index + 1).forEach((item) => {
+                      setValue(item.name, '');
+                    });
+                  }}
                 />
               )}
             />
@@ -197,6 +209,17 @@ export const ProductFilter = ({
         >
           {t('filter.actions.reset')}
         </Button>
+        {isMobile && (
+          <Button
+            type="button"
+            variant="dark"
+            className={s.confirmBtn}
+            onClick={closeMobileFilter}
+            disabled={!isFilterActive}
+          >
+            {t('filter.actions.show')}
+          </Button>
+        )}
       </form>
     </div>
   );

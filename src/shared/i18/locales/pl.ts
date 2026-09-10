@@ -182,13 +182,18 @@ export const pl = {
       },
     },
     tires: {
-      title: 'Opony',
+      title: 'Opony 4X4',
     },
     wheels: {
       title: 'Felgi',
     },
     wheelSpacers: {
       title: 'Dystanse',
+    },
+    search: {
+      title: 'Wyniki wyszukiwania',
+      enterQuery: 'Wpisz zapytanie',
+      noResults: 'Nie znaleziono wyników',
     },
     tireService: {
       title: 'Serwis opon',
@@ -324,7 +329,7 @@ export const pl = {
       title: 'Kontakt',
       titleComponent: 'nasze kontakty',
       description:
-        'Jesteśmy zawsze do dyspozycji i chętnie pomożemy w doborze opon, felg i akcesoriów do Twojego SUV-a.',
+        'Jesteśmy zawsze do dyspozycji i chętnie pomożemy w doborze opon, felg i dystansów do Twojego SUV-a.',
       address: 'Adres',
       addressValue: 'Jerzego Badury 20, 56-416 Goszcz, Polska',
       workingHours: 'Godziny pracy: pon.–pt. 8:00–20:00',
@@ -392,7 +397,7 @@ export const pl = {
       },
       supportBanner: {
         title: 'masz pytania?',
-        descriptionLine1: 'Pomożemy w kwestii gwarancji',
+        descriptionLine1: 'Pomożemy w kwestii gwarancji ',
         descriptionLine2: 'i kompatybilności produktów',
       },
     },
@@ -453,6 +458,7 @@ export const pl = {
     },
 
     actions: {
+      show: 'Pokaż',
       submit: 'Znajdź',
       reset: 'Wyczyść filtry',
     },

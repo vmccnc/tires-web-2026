@@ -43,7 +43,10 @@ export const TireServicePrice = ({
         />
       </div>
       <p className={s.servicePriceNote}>
-        {t('pages.tireService.tireServiceServices.note')}
+        {t('pages.tireService.tireServiceServices.note')}{' '}
+        <a href="tel:+381641234567" className={s.phoneLink}>
+          +48 500 405 819
+        </a>
       </p>
     </Section>
   );

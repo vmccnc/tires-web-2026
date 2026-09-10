@@ -1,6 +1,6 @@
 import { Footer } from '@/widgets/Footer/ui';
 import { Header } from '@/widgets/Header';
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 
 export const MainLayout = () => {
   return (
@@ -10,6 +10,7 @@ export const MainLayout = () => {
         <Outlet />
       </main>
       <Footer />
+      <ScrollRestoration />
     </>
   );
 };

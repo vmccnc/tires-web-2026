@@ -5,6 +5,7 @@ import { useGetWheelSpacersQuery } from '@/entities/wheelSpacer/api';
 import { WheelSpacerCard } from '@/entities/wheelSpacer/ui/WheelSpacerCard';
 import { usePaginationParams } from '@/features/pagination/model/usePaginationParams';
 import type { WheelSpacerParams } from '@/entities/wheelSpacer/model';
+import { PRODUCT_SORT_OPTIONS } from '@/features/sort/config';
 export const WheelSpacers = () => {
   const params = usePaginationParams<WheelSpacerParams>();
   const { data, isLoading, isError } = useGetWheelSpacersQuery(params);
@@ -13,6 +14,7 @@ export const WheelSpacers = () => {
   return (
     <ProductPageLayout
       title="pages.wheelSpacers.title"
+      sortOptions={PRODUCT_SORT_OPTIONS}
       filterType="wheelSpacers"
       className={s.wheelSpacersPage}
       totalPages={data?.totalPages ?? 1}

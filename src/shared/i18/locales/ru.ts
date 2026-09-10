@@ -181,13 +181,19 @@ export const ru = {
       },
     },
     tires: {
-      title: 'Шины',
+      title: 'Шины 4X4',
     },
     wheels: {
       title: 'Диски',
     },
     wheelSpacers: {
       title: 'Проставки',
+    },
+
+    search: {
+      title: 'Результаты поиска',
+      enterQuery: 'Введите запрос',
+      noResults: 'Ничего не найдено',
     },
 
     tireService: {
@@ -325,7 +331,7 @@ export const ru = {
       title: 'Контакты',
       titleComponent: 'наши контакты',
       description:
-        'Мы всегда на связи и рады помочь с подбором шин, дисков и аксессуаров для вашего внедорожника',
+        'Мы всегда на связи и рады помочь с подбором шин, дисков и проставок для вашего внедорожника',
       address: 'Адрес',
       addressValue: 'Jerzego Badury 20, 56-416 Goszcz, Польша',
       workingHours: 'Режим работы: Пн-пт 8:00 до 20:00',
@@ -393,7 +399,7 @@ export const ru = {
       },
       supportBanner: {
         title: 'остались вопросы?',
-        descriptionLine1: 'Поможем разобраться с гарантией',
+        descriptionLine1: 'Поможем разобраться с гарантией ',
         descriptionLine2: 'и совместимостью товаров',
       },
     },
@@ -451,6 +457,7 @@ export const ru = {
     },
 
     actions: {
+      show: 'Показать',
       submit: 'Подобрать',
       reset: 'Сбросить фильтры',
     },

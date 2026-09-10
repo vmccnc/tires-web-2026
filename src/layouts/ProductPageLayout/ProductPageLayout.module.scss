@@ -1,5 +1,6 @@
 .productPageLayout {
   background-color: var(--color-background-primary);
+
   .layoutWrapper {
     display: flex;
     flex-direction: column;
@@ -79,6 +80,7 @@
   display: grid;
   grid-template-columns: 228px minmax(0, 1fr);
   gap: 32px;
+  min-height: 40vh;
   @media (max-width: $tablet) {
     display: block;
   }
