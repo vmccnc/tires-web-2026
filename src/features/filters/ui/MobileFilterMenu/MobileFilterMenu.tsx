@@ -41,7 +41,12 @@ export const MobileFilterMenu = ({
           <Text variant="h2" as={'h3'} className={s.title}>
             {t('filter.mobile.title')}
           </Text>
-          <ProductFilter filterType={filterType} page={page} />
+          <ProductFilter
+            filterType={filterType}
+            page={page}
+            isMobile
+            closeMobileFilter={() => setIsMenuOpen(false)}
+          />
         </div>
       </div>
     </Sheet>

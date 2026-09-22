@@ -6,7 +6,6 @@ import type { ProductFilterType } from '@/features/filters/model';
 import { ProductFilter } from '@/features/filters/ui/ProductFilter';
 import { Pagination } from '@/features/pagination/ui';
 import { Sort } from '@/features/sort/ui';
-import { PRODUCT_SORT_OPTIONS } from '@/features/sort/config';
 import { Breadcrumbs, type BreadcrumbItem } from '@/shared/ui/BreadCrumbs';
 import { ROUTES } from '@/app/router';
 import { getPageState } from '@/layouts/lib';
@@ -14,6 +13,7 @@ import { PageStateWidget } from '@/widgets/PageState/ui/PageStateWidget';
 import { useTranslation } from '@/shared/lib/hooks';
 import { Text } from '@/shared/ui/Text';
 import { MobileFilterMenu } from '@/features/filters/ui/MobileFilterMenu';
+import type { SortOption } from '@/features/sort/model';
 
 type Props = {
   title: string;
@@ -28,6 +28,8 @@ type Props = {
   page?: string;
   actions?: ReactNode;
   className?: string;
+  sortOptions: SortOption[];
+  showSort?: boolean;
 };
 
 export const ProductPageLayout = ({
@@ -42,6 +44,8 @@ export const ProductPageLayout = ({
   isError,
   isLoading,
   isEmpty,
+  sortOptions,
+  showSort = true,
 }: Props) => {
   // Backend uses 0-based page numbering, Pagination uses 1-based.
   const displayPage = currentPage + 1;
@@ -50,7 +54,7 @@ export const ProductPageLayout = ({
   const pageState = getPageState({
     isLoading,
     isError,
-    isEmpty,
+    isEmpty: false,
   });
 
   return (
@@ -88,11 +92,13 @@ export const ProductPageLayout = ({
                   />
                 )}
 
-                <Sort
-                  sortOptions={PRODUCT_SORT_OPTIONS}
-                  className={s.sortFilter}
-                  selectClassName={s.sortInner}
-                />
+                {showSort && (
+                  <Sort
+                    sortOptions={sortOptions}
+                    className={s.sortFilter}
+                    selectClassName={s.sortInner}
+                  />
+                )}
               </div>
             </section>
 
@@ -105,7 +111,13 @@ export const ProductPageLayout = ({
                 </aside>
               )}
 
-              <div className={s.content}> {children}</div>
+              <div className={s.content}>
+                {isEmpty ? (
+                  <PageStateWidget title={title} variant="empty" />
+                ) : (
+                  children
+                )}
+              </div>
             </section>
 
             {totalPages > 1 && (

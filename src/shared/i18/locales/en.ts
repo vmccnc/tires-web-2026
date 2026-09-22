@@ -181,13 +181,18 @@ export const en = {
       },
     },
     tires: {
-      title: 'Tires',
+      title: 'Tires 4X4',
     },
     wheels: {
       title: 'Wheels',
     },
     wheelSpacers: {
       title: 'Wheel Spacers',
+    },
+    search: {
+      title: 'Search Results',
+      enterQuery: 'Enter a search query',
+      noResults: 'No results found',
     },
     tireService: {
       title: 'Tire Service',
@@ -324,7 +329,7 @@ export const en = {
       title: 'Contacts',
       titleComponent: 'our contacts',
       description:
-        'We’re always here and happy to help you choose tires, wheels, and accessories for your SUV.',
+        'We’re always here and happy to help you choose tires, wheels, and wheel spacers for your SUV.',
       address: 'Address',
       addressValue: 'Jerzego Badury 20, 56-416 Goszcz, Poland',
       workingHours: 'Working hours: Mon–Fri 8:00 AM to 8:00 PM',
@@ -392,7 +397,7 @@ export const en = {
       },
       supportBanner: {
         title: 'still have questions?',
-        descriptionLine1: 'We will help you with guarantee',
+        descriptionLine1: 'We will help you with guarantee ',
         descriptionLine2: 'and product compatibility',
       },
     },
@@ -427,7 +432,7 @@ export const en = {
     },
     wheelSpacers: {
       boltDistance: 'PCD',
-      boltInfo: 'Center Bore (DIA)',
+      boltInfo: 'DIA',
       thickness: 'Thickness',
     },
 
@@ -452,6 +457,7 @@ export const en = {
     },
 
     actions: {
+      show: 'Show',
       submit: 'Search',
       reset: 'Reset Filters',
     },
@@ -462,6 +468,7 @@ export const en = {
   },
 
   cards: {
+    submitRequest: 'Submit a request',
     addToCart: 'add to cart',
     inStock: 'In Stock',
     notInStock: 'Out of Stock',
@@ -547,6 +554,34 @@ export const en = {
       learnMore: 'Learn More',
       toCatalog: 'go to catalog',
       contactUs: 'contact us',
+    },
+  },
+
+  supportRequest: {
+    title: 'Still have questions?',
+    subtitle: 'Submit a request — we’ll get back to you shortly',
+    successTitle: 'Request sent',
+    successText: 'We’ll get back to you shortly',
+    customerName: 'How should we address you?',
+    email: 'Email',
+    phone: 'Contact phone number',
+    comment: 'Comment',
+    privacyConsent:
+      'I have read the Privacy Policy and consent to the processing of my personal data',
+    submit: 'Send',
+
+    errors: {
+      nameRequired: 'Enter your first and/or last name',
+      maxLength256: 'Enter no more than 256 characters',
+      nameInvalid: 'The name must not contain numbers or special characters',
+      invalidEmail: 'Enter a valid email address',
+      emailLocalPartMax64:
+        'The local part of the email address must not exceed 64 characters',
+      phoneMin10: 'The phone number must contain at least 10 characters',
+      phoneMax15: 'The phone number must not exceed 15 characters',
+      invalidPhone: 'Invalid phone number format',
+      privacyConsentRequired:
+        'You must consent to the processing of your personal data',
     },
   },
 };

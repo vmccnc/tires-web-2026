@@ -5,6 +5,7 @@ import { ProductPageLayout } from '@/layouts/ProductPageLayout';
 import { ProductGrid } from '@/widgets/ProductGrid';
 import type { TireParams } from '@/entities/tire/model';
 import { usePaginationParams } from '@/features/pagination/model/usePaginationParams';
+import { PRODUCT_SORT_OPTIONS } from '@/features/sort/config';
 export const Tires = () => {
   const params = usePaginationParams<TireParams>();
   const { data, isLoading, isError } = useGetTiresQuery(params);
@@ -14,6 +15,7 @@ export const Tires = () => {
   return (
     <ProductPageLayout
       title="pages.tires.title"
+      sortOptions={PRODUCT_SORT_OPTIONS}
       filterType={'tires'}
       totalPages={data?.totalPages ?? 1}
       currentPage={data?.pageNumber ?? 1}

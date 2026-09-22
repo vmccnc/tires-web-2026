@@ -6,19 +6,25 @@ import { ProductGrid } from '@/widgets/ProductGrid';
 import { SearchCard } from '@/features/search/ui/SearchCard';
 import { useGetSearchResultsQuery } from '@/features/search/api';
 import { skipToken } from '@reduxjs/toolkit/query';
-import { useDebounce } from '@/shared/lib/hooks';
+import { useDebounce, useTranslation } from '@/shared/lib/hooks';
 import { usePaginationParams } from '@/features/pagination/model/usePaginationParams';
 import type { SearchParams } from '@/features/search/model';
+import { SEARCH_SORT_OPTIONS } from '@/features/sort/config';
 export const Search = () => {
   const { title = '' } = useParams();
-  const debouncedTitle = useDebounce(title, 500);
+  const debouncedTitle = useDebounce(title, 300);
   const params = usePaginationParams<SearchParams>();
+  const { t } = useTranslation();
 
-  const { data, isLoading, isError } = useGetSearchResultsQuery(
+  const {
+    currentData: data,
+    isLoading,
+    isError,
+  } = useGetSearchResultsQuery(
     debouncedTitle
       ? {
           ...params,
-          keyword: title,
+          keyword: debouncedTitle,
         }
       : skipToken,
   );
@@ -27,15 +33,17 @@ export const Search = () => {
 
   return (
     <ProductPageLayout
-      title="Search Results"
+      title={t('pages.search.title')}
+      sortOptions={SEARCH_SORT_OPTIONS}
       className={s.searchPage}
       totalPages={data?.totalPages ?? 1}
       currentPage={data?.pageNumber ?? 1}
       isError={isError}
       isLoading={isLoading}
+      showSort={!!title && !!foundProducts?.length}
     >
       {!title ? (
-        <div>Введите запрос</div>
+        <div>{t('pages.search.enterQuery')}</div>
       ) : foundProducts?.length ? (
         <ProductGrid
           items={foundProducts}
@@ -45,7 +53,7 @@ export const Search = () => {
           )}
         />
       ) : (
-        <div>Ничего не найдено</div>
+        <div>{t('pages.search.noResults')}</div>
       )}
     </ProductPageLayout>
   );
