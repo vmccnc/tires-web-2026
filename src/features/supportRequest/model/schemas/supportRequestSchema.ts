@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 export const supportRequestSchema = z.object({
-  customerName: z
+  name: z
     .string()
     .trim()
     .min(1, 'supportRequest.errors.nameRequired')
@@ -29,7 +29,7 @@ export const supportRequestSchema = z.object({
     .max(15, 'supportRequest.errors.phoneMax15')
     .regex(/^\+?\d+$/, 'supportRequest.errors.invalidPhone'),
 
-  privacyConsent: z.boolean().refine((value) => value, {
+  consent: z.boolean().refine((value) => value, {
     message: 'supportRequest.errors.privacyConsentRequired',
   }),
 

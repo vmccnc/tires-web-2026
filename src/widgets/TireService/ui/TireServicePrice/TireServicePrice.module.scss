@@ -36,6 +36,7 @@
     display: block;
     text-align: left;
     cursor: pointer;
+    outline: none;
   }
 
   .servicePriceAccordionItem {
@@ -135,6 +136,11 @@
     tr {
       width: 100%;
       cursor: pointer;
+      outline: none;
+      &:hover,
+      &:focus {
+        background-color: var(--color-background-primary-subtle);
+      }
     }
   }
   .headerText {

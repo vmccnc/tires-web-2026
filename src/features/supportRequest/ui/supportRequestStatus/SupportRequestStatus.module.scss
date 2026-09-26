@@ -1,0 +1,38 @@
+.status {
+  height: 270px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $mobile) {
+    height: 236px;
+  }
+
+  .statusTitle {
+    margin-bottom: 8px;
+  }
+
+  .statusIconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 88px;
+    margin-top: auto;
+    align-self: center;
+
+    @media (max-width: $mobile) {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  .statusIcon {
+    width: 100%;
+    height: 100%;
+  }
+
+  .statusIconSuccess {
+    color: var(--color-icon-success);
+  }
+}

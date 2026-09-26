@@ -11,6 +11,31 @@
     -webkit-appearance: none;
   }
 
+  .sFormStatus {
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+
+    &:not(:empty) {
+      height: auto;
+      line-height: normal;
+      margin: -15px 0 15px;
+    }
+  }
+
+  .sFormStatusLoading {
+    color: var(--color-warning);
+
+    &::after {
+      content: '';
+      animation: dots 1.2s steps(4, end) infinite;
+    }
+  }
+
+  .sFormStatusError {
+    color: var(--color-error);
+  }
+
   //   .sFormComment {
   //     height: 130px;
   //   }
@@ -31,4 +56,23 @@
 
 .sFormCheckboxWrapper {
   margin-bottom: 40px;
+}
+
+@keyframes dots {
+  0% {
+    content: '';
+  }
+
+  25% {
+    content: '.';
+  }
+
+  50% {
+    content: '..';
+  }
+
+  75%,
+  100% {
+    content: '...';
+  }
 }

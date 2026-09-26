@@ -7,6 +7,8 @@ import { socials } from './config/contactsSocials';
 import clsx from 'clsx';
 import { Text } from '@/shared/ui/Text';
 import { Button } from '@/shared/ui/Button';
+import { useAppDispatch } from '@/app/store';
+import { openModal } from '@/app/store/slices';
 
 type ContactsBlockProps = {
   notPage?: boolean;
@@ -15,6 +17,7 @@ type ContactsBlockProps = {
 
 export const ContactsBlock = ({ notPage, className }: ContactsBlockProps) => {
   const { t } = useTranslation();
+  const dispatch = useAppDispatch();
   return (
     <section className={clsx(className, s.contacts)}>
       {notPage && (
@@ -50,7 +53,12 @@ export const ContactsBlock = ({ notPage, className }: ContactsBlockProps) => {
                     </span>
                     <span>{t('pages.contacts.workingHours')}</span>
                   </div>
-                  <Button className={s.contactsInfoButton}>
+                  <Button
+                    className={s.contactsInfoButton}
+                    onClick={() =>
+                      dispatch(openModal({ type: 'SupportRequest' }))
+                    }
+                  >
                     {t('pages.contacts.bookService')}
                   </Button>
                 </>

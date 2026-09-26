@@ -702,6 +702,8 @@ export const en = {
     privacyConsent:
       'I have read the Privacy Policy and consent to the processing of my personal data',
     submit: 'Send',
+    sending: 'Sending',
+    sendError: 'Failed to send the request. Please try again.',
 
     errors: {
       nameRequired: 'Enter your first and/or last name',

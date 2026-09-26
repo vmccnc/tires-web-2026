@@ -30,7 +30,7 @@ export const ServicePriceContent = ({ price }: { price: Price }) => {
 
           <tbody>
             {rows.map((row) => (
-              <tr key={row[0]} className={s.row}>
+              <tr key={row[0]} tabIndex={0} className={s.row}>
                 {row.map((cell) => (
                   <td key={cell}>
                     <Text className={s.bodyText}> {cell}</Text>

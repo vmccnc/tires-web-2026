@@ -701,6 +701,8 @@ export const pl = {
     privacyConsent:
       'Zapoznałem(-am) się z Polityką prywatności i wyrażam zgodę na przetwarzanie moich danych osobowych',
     submit: 'Wyślij',
+    sending: 'Wysyłanie',
+    sendError: 'Nie udało się wysłać zgłoszenia. Spróbuj ponownie.',
 
     errors: {
       nameRequired: 'Podaj imię i/lub nazwisko',
