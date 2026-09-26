@@ -3,7 +3,7 @@ export const SUPPORT_REQUEST_FIELDS = [
     id: 1,
     fields: [
       {
-        value: 'customerName',
+        value: 'name',
         label: 'supportRequest.customerName',
         type: 'text',
         required: true,

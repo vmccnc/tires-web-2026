@@ -1,7 +1,8 @@
 import s from './TireServiceBanner.module.scss';
-import { ROUTES } from '@/app/router';
+import { useAppDispatch } from '@/app/store';
+import { openModal } from '@/app/store/slices';
 import { useTranslation } from '@/shared/lib/hooks';
-import { Banner } from '@/shared/ui/Banner';
+import { Banner, type BannerLink } from '@/shared/ui/Banner';
 
 type TireServiceBannerProps = {
   pageTitle: string;
@@ -9,6 +10,16 @@ type TireServiceBannerProps = {
 
 export const TireServiceBanner = ({ pageTitle }: TireServiceBannerProps) => {
   const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+
+  const links: BannerLink[] = [
+    {
+      linkName: t('general.links.contactUs'),
+      onClick: () => {
+        dispatch(openModal({ type: 'SupportRequest' }));
+      },
+    },
+  ];
   return (
     <Banner
       className={s.tireServiceBanner}
@@ -18,12 +29,7 @@ export const TireServiceBanner = ({ pageTitle }: TireServiceBannerProps) => {
         { label: t('pages.home.title'), to: '/' },
         { label: t(pageTitle) },
       ]}
-      links={[
-        {
-          to: ROUTES.contacts,
-          linkName: t('general.links.contactUs'),
-        },
-      ]}
+      links={links}
     >
       <span>
         <span>

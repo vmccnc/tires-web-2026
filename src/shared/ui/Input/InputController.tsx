@@ -34,6 +34,8 @@ export function InputController<T extends FieldValues>(props: Props<T>) {
     errorMessage,
     placeholderName,
     required,
+    inputWrapperClassName,
+    inputClassName,
     ...restProps
   } = props;
   const {
@@ -45,14 +47,14 @@ export function InputController<T extends FieldValues>(props: Props<T>) {
     errorMessage ?? (error?.message ? t(error.message) : undefined);
 
   return (
-    <div className={props.inputWrapperClassName}>
+    <div className={inputWrapperClassName}>
       <div className={s.inputContainer}>
         <Input
           required={required}
           {...field}
           {...restProps}
           disabled={disabled}
-          className={props.inputClassName}
+          className={inputClassName}
           isError={Boolean(error)}
         />
         {!field.value && (

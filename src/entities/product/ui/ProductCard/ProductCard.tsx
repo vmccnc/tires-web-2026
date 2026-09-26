@@ -73,7 +73,11 @@ export const ProductCard = ({
         </div>
         <Button
           className={s.productCardButton}
-          onClick={() => dispatch(openModal({ type: 'SupportRequest' }))}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dispatch(openModal({ type: 'SupportRequest' }));
+          }}
         >
           {t('cards.request')}
         </Button>

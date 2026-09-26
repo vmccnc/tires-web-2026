@@ -59,13 +59,6 @@ export const TireDetailsCard = ({ tire, className, title, t }: Props) => {
     },
   ];
 
-  //  label: string;
-  //   value: {
-  //       en: string;
-  //       pl: string;
-  //       ru: string;
-  //   };
-
   return (
     <ProductDetailsCard
       product={tire}
